@@ -23,6 +23,7 @@ tags: [ "#", "coding test" ]
 
 
 ### 소스 코드 (cpp)
+{% raw %}
 ```cpp
 #include <iostream>
 #include <vector>
@@ -150,3 +151,4 @@ int main() {
     }
 }
 ```
+{% endraw %}

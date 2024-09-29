@@ -43,6 +43,7 @@ tags: [ "#", "coding test" ]
 
 
 ### 소스 코드 (cc)
+{% raw %}
 ```cc
 #include <iostream>
 #include <cmath>
@@ -68,3 +69,4 @@ int main() {
     }
 }
 ```
+{% endraw %}
