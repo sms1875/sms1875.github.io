@@ -168,20 +168,11 @@ kramdown:
       start_line: 1
 
 collections:
-  coding_tests:
-    output: true
-    permalink: /coding-tests/:name/
   tabs:
     output: true
     sort_by: order
 
 defaults:
-  - scope:
-      path: ""
-      type: coding_tests
-    values:
-      layout: post
-      category: "Coding Tests"
   - scope:
       path: "" # An empty string here means all files in the project
       type: posts
