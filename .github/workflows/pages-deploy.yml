@@ -34,6 +34,7 @@ jobs:
           # submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
+          submodules: true
 
       - name: Setup Pages
         id: pages
@@ -44,6 +45,11 @@ jobs:
         with:
           ruby-version: 3.3
           bundler-cache: true
+
+      - name: Generate Coding Test Posts
+        run: |
+          mkdir -p _coding_tests
+          ruby generate_posts.rb
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"

@@ -1,0 +1,13 @@
+---
+layout: post
+---
+{{ content }}
+
+{% assign file_path = page.path | split: '/' | last %}
+{% assign code_file = file_path | split: '.' | first | append: '.' | append: page.language %}
+{% capture code_content %}{% include_relative {{ code_file }} %}{% endcapture %}
+
+## 풀이 코드
+
+```{{ page.language }}
+{{ code_content }}
