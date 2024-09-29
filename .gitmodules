@@ -1,6 +1,6 @@
 [submodule "assets/lib"]
 	path = assets/lib
 	url = https://github.com/cotes2020/chirpy-static-assets.git
-[submodule "CodingTestStudy"]
-	path = CodingTestStudy
+[submodule "coding_test_repository"]
+	path = coding_test_repository
 	url = https://github.com/sms1875/CodingTestStudy.git

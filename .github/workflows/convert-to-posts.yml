@@ -1,9 +1,11 @@
-name: Convert BaekjoonHub to Jekyll Posts
+name: "Convert BaekjoonHub to Jekyll Posts"
 
 on:
   push:
     branches:
       - main
+    paths:
+      - "coding_test_repository/**" # 백준허브 레포지토리 내 파일이 변경될 때만 실행
   workflow_dispatch:
 
 jobs:
@@ -14,21 +16,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          submodules: true # 서브모듈도 포함하여 체크아웃
+          submodules: true # 서브모듈도 함께 체크아웃
 
-      - name: Set up Ruby
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0"
+          ruby-version: "3.3"
+          bundler-cache: true
 
       - name: Convert BaekjoonHub to Jekyll Posts
         run: |
-          # _posts/coding-test/baekjoon 및 _posts/coding-test/programmers 폴더 생성
           mkdir -p _posts/coding-test/baekjoon
           mkdir -p _posts/coding-test/programmers
 
-          # 백준 문제 README.md 파일을 변환
-          for dir in CodingTestStudy/백준/*/; do
+          # 백준 문제 README.md 파일 변환
+          for dir in coding_test_repository/백준/*/; do
             if [ -f "$dir/README.md" ]; then
               filename=$(basename "$dir")
               title=$(grep -m 1 '^#' "$dir/README.md" | sed 's/# //')
@@ -37,9 +39,7 @@ jobs:
 
               # 언어 확인 및 코드 파일 읽기
               codefile=$(find "$dir" -type f \( -name "*.cpp" -o -name "*.py" -o -name "*.java" -o -name "*.js" \) | head -1)
-              lang=$(echo "$codefile" | awk -F. '{print $NF}')  # 파일 확장자 추출
-
-              # 언어별 코드블럭 설정
+              lang=$(echo "$codefile" | awk -F. '{print $NF}')
               case $lang in
                 cpp) codeblock="cpp";;
                 py) codeblock="python";;
@@ -54,49 +54,6 @@ jobs:
               echo "categories: [coding test, $platform]" >> "_posts/coding-test/$platform/$date-$filename.md"
               echo "tags: [coding test, $platform]" >> "_posts/coding-test/$platform/$date-$filename.md"
               echo "---" >> "_posts/coding-test/$platform/$date-$filename.md"
-
-              # 문제 설명 및 정보 추가
-              cat "$dir/README.md" >> "_posts/coding-test/$platform/$date-$filename.md"
-
-              # 코드 내용 추가
-              if [ -f "$codefile" ]; then
-                echo -e "\n## 정답 코드\n" >> "_posts/coding-test/$platform/$date-$filename.md"
-                echo "\`\`\`$codeblock" >> "_posts/coding-test/$platform/$date-$filename.md"
-                cat "$codefile" >> "_posts/coding-test/$platform/$date-$filename.md"
-                echo "\`\`\`" >> "_posts/coding-test/$platform/$date-$filename.md"
-              fi
-            fi
-          done
-
-          # 프로그래머스 문제 README.md 파일을 변환
-          for dir in CodingTestStudy/프로그래머스/*/; do
-            if [ -f "$dir/README.md" ]; then
-              filename=$(basename "$dir")
-              title=$(grep -m 1 '^#' "$dir/README.md" | sed 's/# //')
-              date=$(date '+%Y-%m-%d')
-              platform="programmers"
-
-              # 언어 확인 및 코드 파일 읽기
-              codefile=$(find "$dir" -type f \( -name "*.cpp" -o -name "*.py" -o -name "*.java" -o -name "*.js" \) | head -1)
-              lang=$(echo "$codefile" | awk -F. '{print $NF}')  # 파일 확장자 추출
-
-              # 언어별 코드블럭 설정
-              case $lang in
-                cpp) codeblock="cpp";;
-                py) codeblock="python";;
-                java) codeblock="java";;
-                js) codeblock="javascript";;
-                *) codeblock="plaintext";;
-              esac
-
-              # Jekyll 포스트 파일 생성
-              echo "---" > "_posts/coding-test/$platform/$date-$filename.md"
-              echo "title: \"$title\"" >> "_posts/coding-test/$platform/$date-$filename.md"
-              echo "categories: [coding test, $platform]" >> "_posts/coding-test/$platform/$date-$filename.md"
-              echo "tags: [coding test, $platform]" >> "_posts/coding-test/$platform/$date-$filename.md"
-              echo "---" >> "_posts/coding-test/$platform/$date-$filename.md"
-
-              # 문제 설명 및 정보 추가
               cat "$dir/README.md" >> "_posts/coding-test/$platform/$date-$filename.md"
 
               # 코드 내용 추가
