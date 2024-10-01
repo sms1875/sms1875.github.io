@@ -5,7 +5,7 @@ date: 2024-07-25 15:20:00
 categories: [Study, Algorithm]
 tags: [Sort]
 ---
-# 정렬 알고리즘이란?
+## 정렬 알고리즘이란?
 
 데이터를 특정 기준에 따라 정렬하는 방법  
 크게 비교 기반 정렬과 비교하지 않는 정렬로 나뉘며, 각 알고리즘은 데이터의 크기, 데이터의 특성, 메모리 제약 등에 따라 다른 성능을 보임
@@ -13,7 +13,7 @@ tags: [Sort]
 * 비교 기반 정렬 (Comparison-based Sort): 각 원소를 비교하여 정렬 순서를 결정하는 방법
 * 비교하지 않는 정렬 (Non-Comparison-based Sort): 데이터를 직접 비교하지 않고 정렬하는 방법으로, 특정 상황에서 더 효율적인 경우가 있음
 
-## 정렬 알고리즘의 시간 복잡도
+### 정렬 알고리즘의 시간 복잡도
 
 * O(N²): 작은 데이터에 적합. 비효율적이지만 구현이 간단.
   * 버블 정렬, 선택 정렬, 삽입 정렬
@@ -22,9 +22,9 @@ tags: [Sort]
 * O(N): 특정 조건이나 특수한 경우에만 사용.
   * 계수 정렬, 기수 정렬, 버킷 정렬
 
-# O(N²) 정렬 알고리즘
+## O(N²) 정렬 알고리즘
 
-## 버블 정렬 (Bubble Sort)
+### 버블 정렬 (Bubble Sort)
 
 인접한 두 원소를 반복적으로 비교하여 정렬 
 
@@ -40,7 +40,7 @@ void bubbleSort(int arr[], int n) {
 }
 ```
 
-## 선택 정렬 (Selection Sort)
+### 선택 정렬 (Selection Sort)
 매번 최소값을 찾아 첫 번째 원소와 교환하는 방식으로 정렬
 
 ```cpp
@@ -57,7 +57,7 @@ void selectionSort(int arr[], int n) {
 }
 ```
 
-## 삽입 정렬 (Insertion Sort)
+### 삽입 정렬 (Insertion Sort)
 정렬된 배열의 끝에서부터 새로운 값을 삽입할 위치를 찾아 정렬  
 작은 데이터에 대해서는 효율적이며, 거의 정렬된 데이터에는 O(N) 성능을 보이기도 함
 
@@ -75,9 +75,9 @@ void insertionSort(int arr[], int n) {
 }
 ```
 
-# O(N log N) 정렬 알고리즘
+## O(N log N) 정렬 알고리즘
 
-## 퀵 정렬 (Quick Sort)
+### 퀵 정렬 (Quick Sort)
 
 분할 정복 알고리즘으로, 기준값(pivot)을 설정하고 좌우로 분할하여 정렬  
 평균 시간 복잡도는 O(N log N)이며, 최악의 경우 O(N²)
@@ -106,7 +106,7 @@ void quickSort(int arr[], int low, int high) {
 }
 ```
 
-## 병합 정렬 (Merge Sort)
+### 병합 정렬 (Merge Sort)
 
 배열을 반으로 나누고, 정렬된 두 배열을 병합하여 하나의 정렬된 배열로 만드는 방식  
 안정적인 정렬 방법으로, 최악의 경우에도 O(N log N)을 유지함
@@ -141,7 +141,7 @@ void mergeSort(int arr[], int l, int r) {
 }
 ```
 
-## 힙 정렬 (Heap Sort)
+### 힙 정렬 (Heap Sort)
 힙 정렬은 최대/최소 힙을 사용하여 정렬  
 우선순위 큐를 사용하여 O(N log N) 시간에 정렬이 가능  
 
@@ -169,9 +169,9 @@ void heapSort(int arr[], int n) {
 }
 ```
 
-# O(N) 정렬 알고리즘
+## O(N) 정렬 알고리즘
 
-## 계수 정렬 (Counting Sort)
+### 계수 정렬 (Counting Sort)
 
 정수 배열의 값들을 기준으로 빈도수를 계산하여 정렬  
 데이터가 정수이고, 값의 범위가 제한된 경우 매우 효율적  
@@ -206,7 +206,7 @@ void countingSort(int arr[], int n, int max_val) {
 }
 ```
 
-## 기수 정렬 (Radix Sort)
+### 기수 정렬 (Radix Sort)
 
 가장 낮은 자릿수부터 높은 자릿수까지 정렬하여 전체를 정렬  
 각 자릿수의 정렬에는 계수 정렬을 사용하므로 시간 복잡도는 O(d * N)
@@ -247,7 +247,7 @@ void radixSort(int arr[], int n) {
 }
 ```
 
-## 버킷 정렬 (Bucket Sort)
+### 버킷 정렬 (Bucket Sort)
 
 데이터를 여러 개의 버킷으로 나누고, 각 버킷을 개별적으로 정렬하여 최종적으로 합치는 방식  
 정렬할 데이터가 균등하게 분포된 경우 효율적으로 동작
@@ -278,9 +278,9 @@ void bucketSort(float arr[], int n) {
 
 ```
 
-# 특수한 정렬 알고리즘
+## 특수한 정렬 알고리즘
 
-## 트리 정렬 (Tree Sort)
+### 트리 정렬 (Tree Sort)
 
 이진 탐색 트리를 이용하여 정렬하는 방법  
 트리에 데이터를 삽입하고, 중위 순회를 통해 정렬  
@@ -323,7 +323,7 @@ void treeSort(int arr[], int n) {
 }
 ```
 
-## 위상 정렬 (Topological Sort)
+### 위상 정렬 (Topological Sort)
 
 위상 정렬은 DAG(Directed Acyclic Graph)에서 각 정점의 순서를 정렬하는 방법  
 보통 그래프 알고리즘에서 작업 순서 결정 등에 사용  
