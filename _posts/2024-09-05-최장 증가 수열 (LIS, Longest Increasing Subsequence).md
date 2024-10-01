@@ -5,7 +5,7 @@ date: 2024-09-05 10:21:00
 categories: [Study, Algorithm]
 tags: [LIS, Longest Increasing Subsequence]
 ---
-# 최장 증가 수열(LIS)이란?
+## 최장 증가 수열(LIS)이란?
 주어진 수열에서 순서대로 정렬된 가장 긴 증가하는 부분 수열  
 
 **예시**  
@@ -20,9 +20,6 @@ LIS: [3, 7, 40, 80]
 
 LIS 문제는 **동적 계획법(Dynamic Programming)** 과 **이분 탐색(Binary Search)** 을 활용하여 해결 가능
 
-
-## LIS 알고리즘의 장점과 단점
-
 ### 장점  
 
 다양한 알고리즘(동적 계획법, 이분 탐색)을 사용하여 문제를 해결할 수 있어, 시간 복잡도를 최적화 가능  
@@ -33,9 +30,9 @@ LIS 알고리즘을 활용하여 다양한 응용 문제를 해결
 동적 계획법을 사용할 경우, O(N²)의 시간 복잡도를 가지므로 큰 입력에 대해 비효율적일 수 있음  
 실제 LIS를 추적하여 구할 때는 추적 배열을 추가해야 하므로, 메모리 사용이 늘어날 수 있음  
 
-# LIS 알고리즘 종류
+## LIS 알고리즘 종류
 
-## 동적 계획법 (Dynamic Programming) - 시간 복잡도 O(N²)
+### 동적 계획법 (Dynamic Programming) - 시간 복잡도 O(N²)
 
 dp[i]는 i번째 원소를 마지막으로 포함하는 LIS의 길이를 의미  
 이전 모든 원소와 비교하여, 증가하는 순서가 유지되면 dp 값을 갱신  
@@ -59,7 +56,7 @@ int LIS_DP(int arr[], int n) {
 }
 ```
 
-## 이분 탐색을 이용한 그리디 방법 - 시간 복잡도 O(N log N)
+### 이분 탐색을 이용한 그리디 방법 - 시간 복잡도 O(N log N)
 
 그리디 알고리즘과 **이분 탐색(Binary Search)** 을 결합  
 LIS를 구성할 수 있는 가장 작은 원소들을 유지하면서 길이를 확장  
@@ -86,7 +83,7 @@ int LIS_BinarySearch(int arr[], int n) {
 }
 ```
 
-## 동적 계획법과 이분 탐색을 결합한 방법 - 시간 복잡도 O(N log N)
+### 동적 계획법과 이분 탐색을 결합한 방법 - 시간 복잡도 O(N log N)
 
 DP 배열을 이분 탐색을 통해 갱신하여 LIS의 길이를 계산  
 DP 배열을 사용하여 각 길이에 해당하는 최소값을 기록하고, 이를 이분 탐색으로 갱신  
@@ -104,17 +101,17 @@ int LIS_Optimized(int arr[], int n) {
     return dp.size();  // dp 배열의 크기가 LIS의 길이
 }
 ```
-# LIS의 응용
+## LIS의 응용
 
-## 최장 감소 수열 (LDS, Longest Decreasing Subsequence)
+### 최장 감소 수열 (LDS, Longest Decreasing Subsequence)
 LIS와 반대로 가장 긴 감소 수열  
 arr 배열의 각 원소를 반대로 정렬한 후 LIS 알고리즘을 적용하면 해결 가능
 
-## 2차원 평면에서 LIS (Longest Increasing Subsequence in 2D)  
+### 2차원 평면에서 LIS (Longest Increasing Subsequence in 2D)  
 2차원 평면에 있는 점들의 좌표가 주어졌을 때, 가장 긴 증가 수열  
 먼저 x 좌표를 기준으로 정렬하고, 이후 y 좌표에 대해서 LIS를 찾음  
 
-## LIS의 길이뿐만 아니라 실제 수열 찾기  
+### LIS의 길이뿐만 아니라 실제 수열 찾기  
 LIS 알고리즘을 사용하여 단순히 길이만 구하는 것이 아니라, 실제 LIS를 추적하여 부분 수열을 반환 가능  
 DP 배열의 값을 이용하거나, 그리디 방법에서 백트래킹을 사용하여 수열을 구함
 
@@ -147,7 +144,7 @@ vector<int> findLIS(int arr[], int n) {
     return result;
 }
 ```
-### 동작 과정
+## 동작 과정
   
 **입력**
 
