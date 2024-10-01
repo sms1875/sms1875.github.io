@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Union-Find (Disjoint Set).md"
+title: "Union-Find (Disjoint Set)"
 date: 2024-10-02 01:20:00
 categories: [Study, Data Structure]
 tags: [Union-Find, Disjoint Set, Graph]
