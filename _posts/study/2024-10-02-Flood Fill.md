@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Flood Fill Algorithm"
-date: 2024-10-02 05:23:00+0900
+date: 2024-10-02 05:28:00+0900
 categories: [Study, Algorithm]
 tags: [Flood Fill, BFS, DFS, Graph]
 ---
@@ -93,9 +93,11 @@ void floodFillBFS(vector<vector<int>>& image, int sr, int sc, int newColor) {
 
 ```
 
-> 선택 기준  
-> DFS: 재귀적인 구현이 간단하며, 깊이 탐색이 필요한 경우 유리함. 그러나 스택 오버플로우가 발생할 수 있으므로 매우 큰 데이터에서는 주의 필요  
-> BFS: 너비 우선 탐색을 통해 방문 순서가 균등하게 퍼지며, 메모리 사용량이 더 안정적일 수 있음  
+### 선택 기준  
+
+* DFS: 재귀적인 구현이 간단하며, 깊이 탐색이 필요한 경우 유리함. 그러나 스택 오버플로우가 발생할 수 있으므로 매우 큰 데이터에서는 주의 필요  
+* BFS: 너비 우선 탐색을 통해 방문 순서가 균등하게 퍼지며, 메모리 사용량이 더 안정적일 수 있음  
+
 > DFS와 BFS의 차이를 이해하고, 상황에 맞는 탐색 방식을 선택하는 것이 중요  
 {: .prompt-tip}
 
