@@ -5,7 +5,7 @@ date: 2024-07-25 14:39:00
 categories: [Study, Data Structure]
 tags: [DAT, Direct Access Table]
 ---
-## 1. DAT(Direct Access Table)란?
+## DAT(Direct Access Table)란?
 DAT는 값을 인덱스로 활용하는 자료구조<br>
 Java의 객체나 파이썬의 딕셔너리처럼, DAT를 사용하면 키의 존재 유무 확인, 개수 카운트 등이 가능<br>
 C++에서는 아래와 같은 방식으로 사용
@@ -15,7 +15,7 @@ int bucket[200];
 bucket['A'] = 1;
 ```
 
-## 2. DAT의 활용 예시
+## DAT의 활용 예시
 
 배열에 어떤 종류의 알파벳이 있는지 찾아내는 문제
 
