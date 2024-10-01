@@ -147,9 +147,7 @@ vector<int> findLIS(int arr[], int n) {
     return result;
 }
 ```
-
-<details>
-    <summary>동작과정</summary>
+### 동작 과정
   
 **입력**
 
@@ -276,5 +274,3 @@ lis_end = parent[1] = -1 (종료)
 LIS: [2, 5, 7, 8]  
 길이: 4
 ```
-
-</details>
