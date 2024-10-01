@@ -144,7 +144,7 @@ vector<int> findLIS(int arr[], int n) {
     return result;
 }
 ```
-## 동작 과정
+#### 동작 과정
   
 **입력**
 
