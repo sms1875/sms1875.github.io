@@ -165,4 +165,4 @@ print("Top element after removal:", pq[0])  # 20
 > priority_queue는 C++에서 기본적으로 최대 힙으로 동작하지만, Python의 heapq는 최소 힙이므로 주의해야 함.  
 > heapq에서 최대 힙을 구현하려면 요소를 삽입할 때 -value로 반전하여 처리
 {: .prompt-info}
-```
+
