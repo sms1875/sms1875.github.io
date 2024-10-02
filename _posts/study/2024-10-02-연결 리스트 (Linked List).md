@@ -248,3 +248,53 @@ int main() {
     return 0;
 }
 ```
+
+### 라이브러리
+
+**C++의 표준 라이브러리 <list>를 사용하면 쉽게 이중 연결 리스트를 구현할 수 있음**
+
+```cpp
+#include <iostream>
+#include <list>
+using namespace std;
+
+int main() {
+    // 이중 연결 리스트 생성
+    list<int> myList;
+
+    // 요소 추가
+    myList.push_back(10);
+    myList.push_back(20);
+    myList.push_front(5);  // 리스트의 앞에 추가
+
+    // 리스트 순회 및 출력
+    cout << "리스트 내용: ";
+    for (const auto& item : myList) {
+        cout << item << " ";
+    }
+    cout << endl;
+
+    // 특정 위치에 요소 삽입
+    auto it = myList.begin();
+    advance(it, 2);  // 두 번째 위치로 이동
+    myList.insert(it, 15);
+
+    // 요소 삭제
+    myList.pop_front();  // 첫 번째 요소 삭제
+
+    // 수정된 리스트 출력
+    cout << "수정된 리스트: ";
+    for (const auto& item : myList) {
+        cout << item << " ";
+    }
+    cout << endl;
+
+    // 리스트 크기
+    cout << "리스트 크기: " << myList.size() << endl;
+
+    return 0;
+}
+```
+
+>**std::list**는 이중 연결 리스트로 구현되어 있어, 양방향 순회가 가능하고 효율적인 삽입과 삭제 연산을 제공
+{: .prompt-info}
