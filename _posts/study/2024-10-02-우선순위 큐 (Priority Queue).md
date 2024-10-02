@@ -113,7 +113,7 @@ int main() {
 
 ### 라이브러리
 
-<queue> 라이브러리의 priority_queue 클래스를 사용  
+#### <queue> 라이브러리의 priority_queue 클래스를 사용   
 
 ```cpp
 #include <iostream>
@@ -138,8 +138,9 @@ int main() {
 
     return 0;
 }
-``` 
-### Python의 heapq 라이브러리를 사용한 우선순위 큐
+```
+
+#### Python의 heapq 라이브러리를 사용한 우선순위 큐
 
 ```python
 import heapq
@@ -164,3 +165,4 @@ print("Top element after removal:", pq[0])  # 20
 > priority_queue는 C++에서 기본적으로 최대 힙으로 동작하지만, Python의 heapq는 최소 힙이므로 주의해야 함.  
 > heapq에서 최대 힙을 구현하려면 요소를 삽입할 때 -value로 반전하여 처리
 {: .prompt-info}
+```
