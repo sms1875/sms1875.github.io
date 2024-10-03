@@ -22,7 +22,7 @@ function Greeting({ name }) {
 // 사용 예시  
 <Greeting name="Alice" />  
 ```
-## 클래스형 컴포넌트란?  
+### 클래스형 컴포넌트란?  
 
 ES6 클래스로 정의된 React 컴포넌트  
 React의 Component 클래스를 상속하고, 상태(state)와 라이프사이클 메서드를 통해 복잡한 UI 동작을 관리  
@@ -43,7 +43,7 @@ class Greeting extends Component {
 <Greeting name="Alice" />  
 ``` 
 
-## 주요 차이점
+### 주요 차이점
 함수형 컴포넌트와 클래스형 컴포넌트는 기능적으로 동일한 역할을 하지만, 상태 관리와 코드의 간결성 측면에서 차이가 있음  
 
 1. **상태 관리 (State Management)**  
