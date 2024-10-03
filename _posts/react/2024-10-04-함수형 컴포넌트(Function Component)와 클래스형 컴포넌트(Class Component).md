@@ -5,8 +5,6 @@ date: 2024-10-04 06:41:00+0900
 categories: [Study, React]
 tags: [React, Frontend, Web]
 ---
-## 함수형 컴포넌트(Function Component)와 클래스형 컴포넌트(Class Component) 
-
 ### 함수형 컴포넌트란?
 JavaScript 함수로 정의된 React 컴포넌트  
 UI를 반환하고, props를 인수로 받아 렌더링 동작을 수행  
@@ -46,7 +44,7 @@ class Greeting extends Component {
 ### 주요 차이점
 함수형 컴포넌트와 클래스형 컴포넌트는 기능적으로 동일한 역할을 하지만, 상태 관리와 코드의 간결성 측면에서 차이가 있음  
 
-1. **상태 관리 (State Management)**  
+* **상태 관리 (State Management)**  
 함수형 컴포넌트는 기본적으로 상태를 관리하지 않지만, React Hook(useState, useEffect)을 통해 상태를 관리 가능  
 클래스형 컴포넌트는 this.state를 사용하여 상태를 직접 관리  
 
@@ -88,7 +86,7 @@ class Counter extends Component {
 }
 ```
 
-2. **라이프사이클 메서드 (Lifecycle Methods)**  
+* **라이프사이클 메서드 (Lifecycle Methods)**  
 함수형 컴포넌트는 React Hook(useEffect)을 사용하여 라이프사이클을 관리  
 클래스형 컴포넌트는 componentDidMount, componentDidUpdate, componentWillUnmount와 같은 메서드를 사용하여 라이프사이클을 관리
 
@@ -138,7 +136,7 @@ class Timer extends Component {
 }
 ```
 
-3. **코드의 간결성**  
+* **코드의 간결성**  
 함수형 컴포넌트는 더 간결한 문법으로 작성할 수 있음  
 클래스형 컴포넌트는 this 키워드를 사용하여 상태와 메서드를 관리하므로, 코드가 복잡해질 수 있음  
 
@@ -160,11 +158,11 @@ class WelcomeMessage extends Component {
 }
 ```
 
-4. **this 키워드**  
+* **this 키워드**  
 함수형 컴포넌트에서는 this 키워드를 사용할 필요 없음  
 클래스형 컴포넌트에서는 this를 사용하여 상태와 메서드에 접근  
 
-5. **성능**  
+* **성능**  
 React 16.8 이후, 함수형 컴포넌트는 React Hook을 통해 성능이 크게 향상되었고, 컴포넌트의 상태와 라이프사이클을 처리할 수 있게 됨  
 특히, 함수형 컴포넌트는 메모리 효율과 코드 최적화 측면에서 더 유리함  
 

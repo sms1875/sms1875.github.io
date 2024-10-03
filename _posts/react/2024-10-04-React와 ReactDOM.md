@@ -37,7 +37,7 @@ React와 ReactDOM의 역할이 분리된 이유는 React가 플랫폼 독립적�
 
 ### 주요 메서드
 
-1. ReactDOM.createRoot
+* ReactDOM.createRoot
    * 컴포넌트를 특정 DOM 요소에 렌더링하기 위한 root를 생성하는 메서드
    * 비동기 렌더링과 향상된 성능을 제공
    * 한번 생성된 root는 재사용되며, 애플리케이션의 최상위 레벨에서 한 번만 호출  
@@ -52,7 +52,7 @@ const root = createRoot(container);
 root.render(<App />);
 ```
 
-2. ReactDOM.createPortal
+* ReactDOM.createPortal
    * 부모 컴포넌트의 DOM 계층 구조 외부에 자식을 렌더링하는 메서드
    * 모달, 툴팁, 팝업과 같은 오버레이 UI를 구현할 때 유용
    * DOM 계층과 React 컴포넌트 계층을 독립적으로 구성 가능
@@ -94,7 +94,7 @@ function App() {
 }
 ```
 
-3. ReactDOM.flushSync
+* ReactDOM.flushSync
    * 상태 업데이트를 동기적으로 즉시 실행하도록 강제하는 메서드
    * 일반적으로는 권장되지 않지만, DOM을 즉시 업데이트해야 하는 특수한 경우에 사용
    * 성능에 영향을 줄 수 있으므로 신중하게 사용  
@@ -111,7 +111,7 @@ function handleClick() {
 }
 ```
 
-4. ReactDOMServer 메서드들
+* ReactDOMServer 메서드들
    * renderToString: 컴포넌트를 HTML 문자열로 렌더링
    * renderToStaticMarkup: 추가적인 React 속성 없이 순수 HTML만 생성
    * renderToPipeableStream: 스트리밍 방식으로 HTML을 생성

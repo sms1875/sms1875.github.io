@@ -32,7 +32,7 @@ const element = React.createElement('h1', null, 'Hello, world!');
    JavaScript와 결합하여 동적인 UI를 쉽게 생성하고, React의 상태 관리와 연동하여 UI를 효율적으로 업데이트 가능  
 
 ### JSX와 HTML의 차이점
-1.  **class 대신 className 사용**  
+*  **class 대신 className 사용**  
     HTML에서는 요소의 클래스 속성을 지정할 때 class를 사용하지만, JSX에서는 className을 사용해야 함
 
 ```html
@@ -48,7 +48,7 @@ const element = React.createElement('h1', null, 'Hello, world!');
 > React는 ```class```가 JavaScript의 예약어이기 때문에 ```className```이라는 대체 속성을 제공  
 {: .prompt-info}   
 
-2.  **태그 속성 이름의 차이**  
+*  **태그 속성 이름의 차이**  
     HTML과는 달리 JSX에서는 camelCase 표기법을 사용하여 속성을 지정  
 
 ```html
@@ -63,7 +63,7 @@ const element = React.createElement('h1', null, 'Hello, world!');
 > ```for```는 JavaScript의 예약어이기 때문에 ```htmlFor``` 이라는 대체 속성을 제공   
 {: .prompt-info}  
 
-3.  **self-closing 태그**  
+*  **self-closing 태그**  
     JSX에서는 input, img, br 등의 태그는 반드시 self-closing 태그로 작성해야 함 
 
 ```html
@@ -76,7 +76,7 @@ const element = React.createElement('h1', null, 'Hello, world!');
 <input type="text" />
 ```
 
-4.  **JSX 표현식 사용**  
+*  **JSX 표현식 사용**  
     JSX 내에서는 {} 중괄호를 사용하여 JavaScript 표현식을 삽입할 수 있음  
     JavaScript의 변수, 함수 호출, 삼항 연산자 등을 사용할 수 있으며, UI를 동적으로 구성 가능   
 
@@ -85,7 +85,7 @@ const name = "React";
 const element = <h1>Hello, {name}!</h1>;  // Hello, React! 출력
 ```
 
-5.  **주석 작성 방식의 차이**  
+*  **주석 작성 방식의 차이**  
     JSX에서는 JavaScript 주석과 HTML 주석이 결합된 형태로 주석을 작성  
     ```{/* */} ```형태를 사용하여 JSX 내에서 주석을 작성해야 하며, 일반 JavaScript 주석```(//, /* */)```은 JSX 블록 내에서는 오류를 발생시킴
 
@@ -98,7 +98,7 @@ const element = <h1>Hello, {name}!</h1>;  // Hello, React! 출력
 ```
 
 ### JSX의 구조와 규칙
-1.  **태그는 반드시 하나의 부모 요소로 감싸야 함**  
+*  **태그는 반드시 하나의 부모 요소로 감싸야 함**  
 JSX의 모든 태그는 하나의 부모 요소로 감싸져 있어야 하며, 그렇지 않으면 오류가 발생
 
 ```jsx
@@ -117,7 +117,7 @@ JSX의 모든 태그는 하나의 부모 요소로 감싸져 있어야 하며, �
 {/* 이와 같이 모든 태그를 <div>, <Fragment> 등 하나의 부모 요소로 감싸야 함 */}
 ```
 
-2. **JSX 내부에서는 조건문 대신 삼항 연산자 사용**  
+* **JSX 내부에서는 조건문 대신 삼항 연산자 사용**  
    JSX 내부에서는 일반적인 if 문을 사용할 수 없으며, 대신 삼항 연산자를 이용하여 조건부 렌더링을 수행
 
 ```jsx
@@ -138,7 +138,7 @@ return (
 );
 ```
 
-3. JSX 내부에서 JavaScript 함수 호출  
+* JSX 내부에서 JavaScript 함수 호출  
    JSX 내에서는 함수를 호출하거나, map()과 같은 메서드를 사용하여 리스트를 렌더링 가능
 
 ```jsx
@@ -155,7 +155,7 @@ return <ul>{listItems}</ul>;
 
 ### 주의사항  
 
-1. **대문자로 시작하는 컴포넌트 이름**  
+* **대문자로 시작하는 컴포넌트 이름**  
    React 컴포넌트는 대문자로 시작해야 함. 그렇지 않으면 React가 일반 HTML 태그로 인식하여 제대로 렌더링되지 않을 수 있음  
 
 ```jsx
@@ -168,7 +168,7 @@ function MyComponent() {  // 올바른 사용
 }
 ``` 
 
-2. **중괄호 사용**  
+* **중괄호 사용**  
    JSX에서 JavaScript 코드를 삽입할 때는 반드시 중괄호 {}로 감싸야 하며, 단순 문자열이나 숫자는 중괄호 없이 사용할 수 있음
 
 ```jsx

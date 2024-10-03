@@ -108,7 +108,7 @@ export default Timer;
 > 의존성 배열이 없는 경우([] 생략), 매번 렌더링될 때마다 useEffect가 실행됨  
 {: .prompt-info}  
 
-## 다양한 useState와 useEffect 사용 예시
+## useState와 useEffect 사용 예시
 
 **예시 1: 다중 상태 관리**
 

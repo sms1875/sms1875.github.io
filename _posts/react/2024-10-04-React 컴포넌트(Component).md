@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "컴포넌트(Component)"
+title: "React 컴포넌트(Component)"
 date: 2024-10-04 04:46:00+0900
 categories: [Study, React]
 tags: [React, Frontend, Web]
@@ -31,7 +31,7 @@ React는 모듈화와 재사용성을 극대화하기 위해 컴포넌트 기반
 
 
 ### 종류
-1. **함수형 컴포넌트 (Function Component)**  
+* **함수형 컴포넌트 (Function Component)**  
 간단한 형태의 React 컴포넌트로, 함수 형태로 정의  
 상태와 라이프사이클 기능은 useState, useEffect와 같은 React Hook을 사용하여 관리
   
@@ -44,7 +44,7 @@ function Greeting({ name }) {
 <Greeting name="John" />
 ``` 
 
-2. **클래스형 컴포넌트 (Class Component)**   
+* **클래스형 컴포넌트 (Class Component)**   
 ES6 클래스 문법을 사용하여 정의하며, 더 복잡한 상태와 라이프사이클 관리 기능 제공
 함수형 컴포넌트가 도입되기 이전에 많이 사용되었으나, 현재는 Hook을 사용하는 함수형 컴포넌트가 더 권장됨  
 
@@ -61,7 +61,7 @@ class Greeting extends Component {
 <Greeting name="John" />
 ``` 
 
-3. **컨테이너 컴포넌트 (Container Component)**  
+* **컨테이너 컴포넌트 (Container Component)**  
 UI를 렌더링하지 않고, 데이터나 상태 관리를 담당하는 컴포넌트  
 다른 컴포넌트에 필요한 데이터를 전달하거나, 애플리케이션의 비즈니스 로직을 처리  
 
@@ -84,7 +84,7 @@ function ContainerComponent({ children }) {
 </ContainerComponent>
 ``` 
 ### 구조
-1. **JSX를 사용한 렌더링**   
+* **JSX를 사용한 렌더링**   
 
 모든 React 컴포넌트는 JSX를 사용하여 UI를 정의  
 JSX는 JavaScript와 HTML을 결합한 형태로, React 컴포넌트의 구조를 직관적으로 표현  
@@ -99,7 +99,7 @@ function Welcome() {
 }
 ```
  
-2. **props**  
+* **props**  
 props는 컴포넌트 간 데이터 전달을 위해 사용되는 속성  
 부모 컴포넌트가 자식 컴포넌트에게 데이터를 전달할 때 사용되며, 자식 컴포넌트는 props를 읽기 전용으로 사용  
 
@@ -117,7 +117,7 @@ function UserProfile({ name, age }) {
 <UserProfile name="Alice" age={25} />
 ``` 
 
-3. **state**  
+* **state**  
 state는 컴포넌트의 상태를 관리하는 객체  
 상태는 컴포넌트 내에서 변경될 수 있으며, 상태가 변경되면 해당 컴포넌트와 하위 컴포넌트가 다시 렌더링  
 
@@ -144,7 +144,7 @@ React는 단방향 데이터 흐름을 사용하여 컴포넌트 간의 데이�
 상위 컴포넌트는 하위 컴포넌트에게 데이터를 전달하고, 하위 컴포넌트는 props를 통해 데이터를 수신  
 
 ### 데이터 전달 방식
-1. **props를 통한 데이터 전달**  
+* **props를 통한 데이터 전달**  
 상위 컴포넌트에서 하위 컴포넌트에게 props를 이용하여 데이터를 전달  
 
 ```jsx
@@ -163,7 +163,7 @@ function ChildComponent({ user }) {
 }
 ```
 
-2. **상태 끌어올리기 (Lifting State Up)**  
+* **상태 끌어올리기 (Lifting State Up)**  
 상위 컴포넌트와 하위 컴포넌트가 동일한 상태를 공유해야 할 때, 상태를 상위 컴포넌트로 끌어올리고 하위 컴포넌트에 props로 전달
 
 ```jsx
