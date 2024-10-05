@@ -1,184 +1,171 @@
 ---
 layout: post
-title: "함수형 컴포넌트(Function Component)와 클래스형 컴포넌트(Class Component)"
-date: 2024-10-04 06:41:00+0900
+title: "클래스형 컴포넌트의 constructor, state, render .md"
+date: 2024-10-05 16:54:00+0900
 categories: [Study, React]
 tags: [React, Frontend, Web]
 ---
-### 함수형 컴포넌트란?
-JavaScript 함수로 정의된 React 컴포넌트  
-UI를 반환하고, props를 인수로 받아 렌더링 동작을 수행  
+## 클래스형 컴포넌트란?
+React의 초기 버전에서 컴포넌트를 정의할 때 사용된 방식으로, ES6 클래스 문법을 기반으로 만들어진 컴포넌트  
+클래스형 컴포넌트는 **상태(state)**와 라이프사이클 메서드를 사용할 수 있으며, 현재는 함수형 컴포넌트의 React Hook이 도입되기 전까지 React의 기본 컴포넌트 형태로 사용됨    
 
-> 함수형 컴포넌트는 비교적 간단한 UI 컴포넌트를 정의할 때 사용되며, 상태(state)나 라이프사이클 메서드를 포함하지 않음  
-{: .prompt-info}
+### 특징
 
-```jsx
-function Greeting({ name }) {  
-  return <h1>Hello, {name}!</h1>;  
-}
+* **상태(state)**와 props를 기반으로 UI를 렌더링  
+* 클래스 메서드(render, componentDidMount 등)를 통해 컴포넌트의 라이프사이클 관리  
+* this 키워드를 사용하여 컴포넌트 내의 상태와 메서드에 접근  
 
-// 사용 예시  
-<Greeting name="Alice" />  
-```
-### 클래스형 컴포넌트란?  
-
-ES6 클래스로 정의된 React 컴포넌트  
-React의 Component 클래스를 상속하고, 상태(state)와 라이프사이클 메서드를 통해 복잡한 UI 동작을 관리  
-
-> 클래스형 컴포넌트는 상태를 가지고 있거나, 컴포넌트의 라이프사이클을 관리해야 할 때 사용됨  
+> 함수형 컴포넌트는 상태 관리와 부수 효과 관리를 useState 및 useEffect로 처리하지만, 클래스형 컴포넌트는 이를 this.state와 라이프사이클 메서드로 관리  
 {: .prompt-info}  
 
-```jsx
-import React, { Component } from 'react';  
-  
-class Greeting extends Component {  
-  render() {  
-    return <h1>Hello, {this.props.name}!</h1>;  
-  }  
-}
+### constructor 메서드  
+클래스형 컴포넌트의 생성자 메서드로, 초기 상태를 정의하고 필요한 속성을 설정할 때 사용  
+이 메서드는 클래스가 인스턴스화될 때 가장 먼저 호출되며, this.state를 사용하여 초기 상태를 정의  
 
-// 사용 예시  
-<Greeting name="Alice" />  
-``` 
-
-### 주요 차이점
-함수형 컴포넌트와 클래스형 컴포넌트는 기능적으로 동일한 역할을 하지만, 상태 관리와 코드의 간결성 측면에서 차이가 있음  
-
-* **상태 관리 (State Management)**  
-함수형 컴포넌트는 기본적으로 상태를 관리하지 않지만, React Hook(useState, useEffect)을 통해 상태를 관리 가능  
-클래스형 컴포넌트는 this.state를 사용하여 상태를 직접 관리  
-
+* props: 부모 컴포넌트로부터 전달받은 속성  
+* super(props): React.Component의 생성자를 호출하여 부모 클래스의 속성을 초기화  
 
 ```jsx
-//함수형 컴포넌트에서 상태 관리  
-import React, { useState } from 'react';  
-
-function Counter() {  
-  const [count, setCount] = useState(0);  
-
-  return (  
-    <div>  
-      <p>Count: {count}</p>  
-      <button onClick={() => setCount(count + 1)}>Increase</button>  
-    </div>  
-  );  
-}
+constructor(props) {  
+  super(props);  
+  // 컴포넌트의 상태 초기화  
+  this.state = {  
+    count: 0  
+  };  
+}  
 ```
 
+**구현: 간단한 카운터 컴포넌트**  
+constructor에서 this.state를 통해 초기 상태를 정의하고, setState를 사용하여 상태를 업데이트  
+
 ```jsx
-//클래스형 컴포넌트에서 상태 관리
+// 간단한 카운터 컴포넌트
 import React, { Component } from 'react';  
 
 class Counter extends Component {  
   constructor(props) {  
     super(props);  
-    this.state = { count: 0 };  
+    // 초기 상태 값 정의  
+    this.state = {  
+      count: 0  
+    };  
   }  
 
   render() {  
     return (  
       <div>  
-        <p>Count: {this.state.count}</p>  
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>Increase</button>  
+        <h2>Counter: {this.state.count}</h2>  
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>증가</button>  
+        <button onClick={() => this.setState({ count: this.state.count - 1 })}>감소</button>  
       </div>  
     );  
   }  
-}
+}  
+
+export default Counter;  
 ```
 
-* **라이프사이클 메서드 (Lifecycle Methods)**  
-함수형 컴포넌트는 React Hook(useEffect)을 사용하여 라이프사이클을 관리  
-클래스형 컴포넌트는 componentDidMount, componentDidUpdate, componentWillUnmount와 같은 메서드를 사용하여 라이프사이클을 관리
+### state와 setState 메서드  
+클래스형 컴포넌트의 상태 관리는 state 객체와 setState 메서드를 통해 이루어짐  
+* state: 컴포넌트의 현재 상태를 저장하는 객체  
+* setState: 상태 값을 업데이트하고, UI를 재렌더링  
 
-```jsx 
-// 함수형 컴포넌트에서 라이프사이클 관리  
-import React, { useState, useEffect } from 'react';  
+```jsx
+this.state = {  
+  name: 'John',  
+  age: 25  
+};  
+this.setState({ name: 'Alice' });  
+```
 
-function Timer() {  
-  const [seconds, setSeconds] = useState(0);  
+> setState는 비동기적으로 실행되므로, setState가 호출된 직후에는 this.state가 즉시 반영되지 않을 수 있음  
+{: .prompt-info}  
 
-  useEffect(() => {  
-    const interval = setInterval(() => {  
-      setSeconds(s => s + 1);  
-    }, 1000);  
+### render 메서드  
+클래스형 컴포넌트에서 UI를 정의하는 필수 메서드  
+render 메서드는 상태(this.state)와 속성(this.props)을 기반으로 JSX를 반환  
 
-    // 컴포넌트 언마운트 시 타이머 정리  
-    return () => clearInterval(interval);  
-  }, []);  
+**특징**   
+필수 메서드로, 반드시 JSX 또는 null을 반환해야 함  
+상태가 변경될 때마다 React는 render() 메서드를 호출하여 UI를 업데이트  
 
-  return <p>Seconds: {seconds}</p>;  
+```jsx
+render() {  
+  return <div>My Component</div>;  
 }  
 ```
 
-``` jsx
-// 클래스형 컴포넌트에서 라이프사이클 관리
+
+### this 키워드  
+클래스형 컴포넌트에서는 this가 컴포넌트 인스턴스를 가리키며, 컴포넌트 내의 상태(this.state)와 메서드(this.setState)에 접근할 때 사용  
+  
+**메서드 바인딩**   
+클래스 메서드에서 this를 사용할 때, this가 올바르게 참조되도록 메서드 바인딩을 해야 함   
+
+```jsx
+// 이벤트 핸들러에서 this.handleClick이 올바르게 this를 참조하도록 바인딩 필요   
+constructor(props) {  
+  super(props);  
+  this.handleClick = this.handleClick.bind(this);  
+}  
+```
+
+> 화살표 함수(=>)를 사용하면 자동으로 this 바인딩이 이루어짐  
+{: .prompt-tip}  
+
+**구현: 이벤트 핸들러에서 this 사용**  
+constructor에서 이벤트 핸들러 this.handleClick을 this와 명시적으로 바인딩하여, 버튼 클릭 시 올바른 this를 참조하도록 함   
+
+```jsx
 import React, { Component } from 'react';  
 
-class Timer extends Component {  
+class Toggle extends Component {  
   constructor(props) {  
     super(props);  
-    this.state = { seconds: 0 };  
+    this.state = {  
+      isToggleOn: true  
+    };  
+
+    // `this` 바인딩  
+    this.handleClick = this.handleClick.bind(this);  
   }  
 
-  componentDidMount() {  
-    this.interval = setInterval(() => {  
-      this.setState({ seconds: this.state.seconds + 1 });  
-    }, 1000);  
-  }  
-
-  componentWillUnmount() {  
-    clearInterval(this.interval);  
+  handleClick() {  
+    this.setState(state => ({  
+      isToggleOn: !state.isToggleOn  
+    }));  
   }  
 
   render() {  
-    return <p>Seconds: {this.state.seconds}</p>;  
+    return (  
+      <button onClick={this.handleClick}>  
+        {this.state.isToggleOn ? 'ON' : 'OFF'}  
+      </button>  
+    );  
   }  
-}
+}  
+
+export default Toggle;  
+
 ```
 
-* **코드의 간결성**  
-함수형 컴포넌트는 더 간결한 문법으로 작성할 수 있음  
-클래스형 컴포넌트는 this 키워드를 사용하여 상태와 메서드를 관리하므로, 코드가 복잡해질 수 있음  
+### 클래스형 컴포넌트의 라이프사이클 메서드   
+
+클래스형 컴포넌트는 다음과 같은 라이프사이클 메서드를 통해 컴포넌트의 생명주기를 관리  
+
+* componentDidMount: 컴포넌트가 마운트된 직후 실행 (데이터 요청 등)  
+* componentDidUpdate: 컴포넌트가 업데이트된 직후 실행  
+* componentWillUnmount: 컴포넌트가 언마운트되기 직전 실행 (클린업 작업)  
 
 ```jsx
-// 함수형 컴포넌트 예시
-function WelcomeMessage({ name }) {  
-  return <h1>Welcome, {name}!</h1>;  
-}
+componentDidMount() {  
+  console.log('컴포넌트가 마운트되었습니다.');  
+}  
 ```
 
-```jsx
-// 클래스형 컴포넌트 예시
-import React, { Component } from 'react';  
-
-class WelcomeMessage extends Component {  
-  render() {  
-    return <h1>Welcome, {this.props.name}!</h1>;  
-  }  
-}
-```
-
-* **this 키워드**  
-함수형 컴포넌트에서는 this 키워드를 사용할 필요 없음  
-클래스형 컴포넌트에서는 this를 사용하여 상태와 메서드에 접근  
-
-* **성능**  
-React 16.8 이후, 함수형 컴포넌트는 React Hook을 통해 성능이 크게 향상되었고, 컴포넌트의 상태와 라이프사이클을 처리할 수 있게 됨  
-특히, 함수형 컴포넌트는 메모리 효율과 코드 최적화 측면에서 더 유리함  
-
-> 최신 React 애플리케이션에서는 주로 함수형 컴포넌트를 사용하고, 클래스형 컴포넌트는 기존 코드베이스와의 호환성을 위해 유지  
-{: .prompt-info}
-
-### 결론: 언제 어떤 컴포넌트를 사용할까?  
-
-**함수형 컴포넌트**
-  * 간단한 UI 컴포넌트를 정의할 때  
-  * 상태 관리가 필요할 때도 useState, useEffect 등의 Hook을 활용  
-  * 최신 React 애플리케이션 개발 시 권장    
-
-**클래스형 컴포넌트**  
-  * 기존의 클래스형 컴포넌트가 사용된 코드와 호환이 필요할 때  
-  * 매우 복잡한 로직을 포함한 경우, 클래스 컴포넌트에서의 메서드 관리가 더 직관적일 때  
-
-> React Hook의 도입 이후, 클래스형 컴포넌트의 사용은 줄어들고 있으며, 함수형 컴포넌트가 새로운 표준으로 자리잡고 있음  
+> 함수형 컴포넌트에서는 useEffect를 사용하여 클래스형 컴포넌트의 라이프사이클 메서드를 대체할 수 있음  
 {: .prompt-tip}
+
+## 결론
+* 클래스형 컴포넌트는 constructor에서 상태를 초기화하고, render 메서드를 통해 UI를 정의하며, this를 사용하여 상태와 메서드를 관리  
+* 함수형 컴포넌트와 React Hook의 등장으로 클래스형 컴포넌트는 사용 빈도가 줄었지만, 기존 코드 유지보수와 복잡한 UI 로직을 처리할 때 여전히 유용  
