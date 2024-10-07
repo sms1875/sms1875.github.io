@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "클래스형 컴포넌트의 constructor, state, render .md"
+title: 클래스형 컴포넌트의 constructor, state, render
 date: 2024-10-05 16:54:00+0900
 categories: [Study, React]
 tags: [React, Frontend, Web]
