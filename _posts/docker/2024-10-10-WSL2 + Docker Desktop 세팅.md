@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WSL2 + Docker Desktop 세팅"
-date: 2024-10-03 03:07:00+0900
+date: 2024-10-10 03:07:00+0900
 categories: [Study, Docker]
 tags: [WSL2, Docker, Docker Desktop]
 math: true
