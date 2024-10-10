@@ -62,7 +62,7 @@ class Greeting extends Component {
 ``` 
 
 * **컨테이너 컴포넌트 (Container Component)**  
-UI를 렌더링하지 않고, 데이터나 상태 관리를 담당하는 컴포넌트  
+UI의 렌더링보다는 데이터나 상태 관리에 집중하는 컴포넌트  
 다른 컴포넌트에 필요한 데이터를 전달하거나, 애플리케이션의 비즈니스 로직을 처리  
 
 ```jsx

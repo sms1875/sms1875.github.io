@@ -77,6 +77,7 @@ useEffect(() => {
 * Cleanup 함수: 언마운트 시 실행될 코드
 * dependencyArray: 이 배열에 포함된 값이 변경될 때만 effect가 재실행됨
    * 빈 배열 []: 컴포넌트가 처음 마운트될 때만 실행
+   * dependencyArray가 없으면 매번 렌더링 될 때마다 useEffect 실행  
 
 ```jsx
 // 예시: 간단한 타이머 컴포넌트

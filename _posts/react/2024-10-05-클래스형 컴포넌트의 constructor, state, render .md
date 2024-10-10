@@ -78,7 +78,7 @@ this.state = {
 this.setState({ name: 'Alice' });  
 ```
 
-> setState는 비동기적으로 실행되므로, setState가 호출된 직후에는 this.state가 즉시 반영되지 않을 수 있음  
+> setState는 React의 상태 업데이트 방식에 따라 다르게 동작할 수 있어서, 호출된 직후에는 this.state가 즉시 반영되지 않을 수 있음  
 {: .prompt-info}  
 
 ### render 메서드  
@@ -110,7 +110,7 @@ constructor(props) {
 }  
 ```
 
-> 화살표 함수(=>)를 사용하면 자동으로 this 바인딩이 이루어짐  
+> 화살표 함수(=>)를 사용하면 자동으로 this 바인딩이 이루어짐. but, 렌더링할 때마다 새로운 함수가 생성될 수 있으므로 성능에 영향을 줄 수 있음  
 {: .prompt-tip}  
 
 **구현: 이벤트 핸들러에서 this 사용**  
@@ -152,10 +152,11 @@ export default Toggle;
 ### 클래스형 컴포넌트의 라이프사이클 메서드   
 
 클래스형 컴포넌트는 다음과 같은 라이프사이클 메서드를 통해 컴포넌트의 생명주기를 관리  
-
-* componentDidMount: 컴포넌트가 마운트된 직후 실행 (데이터 요청 등)  
-* componentDidUpdate: 컴포넌트가 업데이트된 직후 실행  
-* componentWillUnmount: 컴포넌트가 언마운트되기 직전 실행 (클린업 작업)  
+- `componentDidMount`: 컴포넌트가 마운트된 직후 실행 (데이터 요청 등)
+- `componentDidUpdate`: 컴포넌트가 업데이트된 직후 실행
+- `componentWillUnmount`: 컴포넌트가 언마운트되기 직전 실행 (이벤트 리스너 해제, 타이머 정리 등 클린업 작업)  
+- `shouldComponentUpdate`: 상태나 props 변경 시, 리렌더링 여부를 결정
+- `getDerivedStateFromProps`: props의 변경에 따라 state를 업데이트할 때 사용
 
 ```jsx
 componentDidMount() {  
