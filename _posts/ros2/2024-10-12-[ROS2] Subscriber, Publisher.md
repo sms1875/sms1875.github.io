@@ -5,6 +5,7 @@ date: 2024-10-12 21:24:00+0900
 categories: [Study, ROS2]
 tags: [ROS2]
 ---
+
 ## SubScriber 만들기
 
 새로운 노드 파일을 만들어보자
@@ -69,10 +70,10 @@ ros2 run my_first_package my_subscriber
 
 이제 새로운 터미널에서 topic list를 확인해보자
 
-> `ros2 topic list` 에서 **/turtle1/pose** 는  published가 아니라 subscribed 이므로 헷갈릴 수 있다.
-> 
-> -v로 자세히 확인해봐야 한다 
-{: .prompt-warning}    
+> `ros2 topic list` 에서 **/turtle1/pose** 는 published가 아니라 subscribed 이므로 헷갈릴 수 있다.
+>
+> -v로 자세히 확인해봐야 한다
+> {: .prompt-warning}
 
 ![image.png](assets/img/posts/ros2/subscriber, publisher/image%204.png)
 
@@ -126,8 +127,8 @@ if __name__ == "__main__":
 
 ```bash
 colcon build
-sb 
-ros2 run my_first_package  my_publisher 
+sb
+ros2 run my_first_package  my_publisher
 ```
 
 ![image.png](assets/img/posts/ros2/subscriber, publisher/image%206.png)
@@ -138,7 +139,7 @@ ros2 run my_first_package  my_publisher
 
 ```bash
 ros2 run turtlesim turtlesim_node
-ros2 run my_first_package  my_publisher 
+ros2 run my_first_package  my_publisher
 ros2 run my_first_package  my_subscriber
 ```
 

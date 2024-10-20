@@ -5,7 +5,8 @@ date: 2024-10-11 03:08:00+0900
 categories: [Study, ROS2]
 tags: [ROS2]
 ---
-{% include embed/youtube.html id='dlTzRYS99UA' %}  
+
+{% include embed/youtube.html id='dlTzRYS99UA' %}
 
 ws의 src 폴더로 이동한다
 
@@ -24,13 +25,13 @@ ros2 pkg create --build-type ament_python --node-name my_first_node my_first_pac
 ![image.png](assets/img/posts/ros2/package와 Node 만들기/image%201.png)
 
 build type은 python, cmake 등 원하는 형식으로 지정이 가능하다
-    
-> node란?   
-> ROS에서 실행 가능한 최소 단위   
-> ros2 run [pkg name][node name] : 노드 실행    
-> ros2 node list : 실행중인 노드 리스트    
-> ros2 node info [node name] : Subscribers, Publishers, Servcie Servers 등 제공하는 기능들   
-{: .prompt-info}    
+
+> node란?  
+> ROS에서 실행 가능한 최소 단위  
+> ros2 run [pkg name][node name] : 노드 실행  
+> ros2 node list : 실행중인 노드 리스트  
+> ros2 node info [node name] : Subscribers, Publishers, Servcie Servers 등 제공하는 기능들  
+> {: .prompt-info}
 
 src 폴더 안에 package가 생성되었는지 확인한다
 
@@ -39,7 +40,7 @@ src 폴더 안에 package가 생성되었는지 확인한다
 ws로 돌아가 빌드를 실행한다
 
 ```bash
-cd .. 
+cd ..
 colcon build
 ```
 
@@ -55,7 +56,7 @@ ros2 run my_first_package my_first_node
 
 **작동이 되지 않는다 !!**
 
-워크스페이스의 install 파일을 보면 
+워크스페이스의 install 파일을 보면
 
 local_setup.bash라는 파일이 있다
 
