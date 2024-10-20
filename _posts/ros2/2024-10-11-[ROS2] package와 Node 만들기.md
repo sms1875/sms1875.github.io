@@ -31,7 +31,7 @@ build type은 python, cmake 등 원하는 형식으로 지정이 가능하다
 > ros2 run [pkg name][node name] : 노드 실행  
 > ros2 node list : 실행중인 노드 리스트  
 > ros2 node info [node name] : Subscribers, Publishers, Servcie Servers 등 제공하는 기능들  
-> {: .prompt-info}
+{: .prompt-info}
 
 src 폴더 안에 package가 생성되었는지 확인한다
 

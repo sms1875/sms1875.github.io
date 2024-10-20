@@ -10,7 +10,7 @@ tags: [WSL2, Docker, Docker Desktop]
 
 > WSL란?  
 > Windows에서 별도의 가상 머신이나 듀얼 부팅 설정 없이 리눅스 배포판(Ubuntu, Debian 등)을 설치하고 실행할 수 있는 환경  
-> {: .prompt-info}
+{: .prompt-info}
 
 관리자 권한으로 터미널을 실행한다
 
@@ -73,7 +73,7 @@ docker pull nginx
 
 > Docker 이미지  
 > 애플리케이션과 그 실행 환경이 포함된 정적 파일로, 컨테이너를 생성하는 데 사용됨  
-> {: .prompt-info}
+{: .prompt-info}
 
 ![image.png](assets/img/posts/docker/WSL2 + Docker Desktop 세팅/image 10.png)
 
@@ -121,7 +121,7 @@ docker run --name webserver -p 8080:80 nginx
 
 > Docker 컨테이너  
 > 이미지를 기반으로 실행되는 애플리케이션 인스턴스로, 각각 독립된 환경에서 애플리케이션을 실행함  
-> {: .prompt-info}
+{: .prompt-info}
 
 ![image.png](assets/img/posts/docker/WSL2 + Docker Desktop 세팅/image 12.png)
 

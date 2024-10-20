@@ -205,7 +205,7 @@ devcontainer.json 파일을 만든다
 
 devcontainer.json 파일은 ChatGPT를 이용해서 만들었다
 
-```json
+```
 {
   "name": "ROS2 Humble", // DevContainer의 이름. VS Code에서 DevContainer를 구분할 때 사용.
   "image": "osrf/ros:humble-desktop-full", // 사용할 Docker 이미지. 여기서는 ROS2 Humble Desktop Full 이미지 사용.
@@ -243,7 +243,7 @@ bashrc 에 설정하기 위해 커맨드 추가
 
 devcontainer.json
 
-```json
+```
 {
 	... ,
  "postCreateCommand": "chmod +x ~/ros2-ws/.devcontainer/setup.sh && /bin/bash ~/ros2-ws/.devcontainer/setup.sh" // setup.sh 파일
@@ -252,7 +252,7 @@ devcontainer.json
 
 setup.sh
 
-```json
+```sh
 #!/bin/bash
 
 # ROS2 환경 설정

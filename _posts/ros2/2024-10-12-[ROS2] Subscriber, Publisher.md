@@ -73,7 +73,7 @@ ros2 run my_first_package my_subscriber
 > `ros2 topic list` 에서 **/turtle1/pose** 는 published가 아니라 subscribed 이므로 헷갈릴 수 있다.
 >
 > -v로 자세히 확인해봐야 한다
-> {: .prompt-warning}
+{: .prompt-warning}
 
 ![image.png](assets/img/posts/ros2/subscriber, publisher/image%204.png)
 
