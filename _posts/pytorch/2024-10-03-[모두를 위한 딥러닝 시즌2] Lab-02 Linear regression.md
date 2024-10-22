@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[모두를 위한 딥러닝 시즌2] lab02"
+title: "[모두를 위한 딥러닝 시즌2] Lab-02 Linear regression"
 date: 2024-10-03 19:32:00+0900
-categories: [Study, 모두를 위한 딥러닝 시즌2]
-tags: [모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
+categories: [Study, PyTorch]
+tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
 {% include embed/youtube.html id='kyjBMuNM1DI' %}  
@@ -22,7 +22,7 @@ math: true
 
 ## Data definition
 
-![alt text](assets/img/posts/deeplearningzerotoall/2/image.png)  
+![alt text](assets/img/posts/pytorch/2/image.png)  
 
 1. Training Dataset
   * 모델을 학습시키기 위한 기존 데이터
@@ -32,7 +32,7 @@ math: true
   * 학습이 완료된 모델의 성능을 평가하기 위한 데이터
   * 학습에 사용되지 않은 새로운 데이터
 
-![alt text](assets/img/posts/deeplearningzerotoall/2/image-1.png)  
+![alt text](assets/img/posts/pytorch/2/image-1.png)  
 
 모델을 학습시키기 위한 데이터는 torch.tensor 의 형태
 입력과 출력을 따로 저장   

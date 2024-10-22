@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[모두를 위한 딥러닝 시즌2] lab04-1"
+title: "[모두를 위한 딥러닝 시즌2] Lab-04-1 Multivariable Linear regression"
 date: 2024-10-03 22:55:00+0900
-categories: [Study, 모두를 위한 딥러닝 시즌2]
-tags: [모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
+categories: [Study, PyTorch]
+tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
 {% include embed/youtube.html id='1JT8KhvymmY' %}  
@@ -11,14 +11,14 @@ math: true
 
 ## Multivariate Linear Regression  
 
-![alt text](assets/img/posts/deeplearningzerotoall/4-1/image.png)  
+![alt text](assets/img/posts/pytorch/4-1/image.png)  
 
 **Simpler Linear Regression**  
 - 하나의 정보로부터 하나의 결론을 예측  
 
 but, 대부분 경우 예측을 위해서는 더욱 다양한 정보가 필요   
 
-![alt text](assets/img/posts/deeplearningzerotoall/4-1/image-1.png)  
+![alt text](assets/img/posts/pytorch/4-1/image-1.png)  
 
 복수의 정보를 통해 하나의 추측값을 계산  
 (예: 쪽지시험 성적 73,80,75 점인 학생의 기말고사 성적 예측)  
@@ -26,7 +26,7 @@ but, 대부분 경우 예측을 위해서는 더욱 다양한 정보가 필요
 
 ### Data 
 
-![alt text](assets/img/posts/deeplearningzerotoall/4-1/image-2.png)  
+![alt text](assets/img/posts/pytorch/4-1/image-2.png)  
 
 
 

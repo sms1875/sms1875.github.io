@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[모두를 위한 딥러닝 시즌2] lab07-2"
+title: "[모두를 위한 딥러닝 시즌2] Lab-07-2 MNIST Introduction"
 date: 2024-10-17 03:48:00+0900
-categories: [Study, 모두를 위한 딥러닝 시즌2]
-tags: [모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
+categories: [Study, PyTorch]
+tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
 ## What is MNIST?
@@ -21,7 +21,7 @@ math: true
     - pytorch 에서 X = X.view(-1, 28 * 28)를 이용해 사용
 3. 0 ~ 9 digits
 
-![image.png](assets/img/posts/deeplearningzerotoall/7-2/image.png)
+![image.png](assets/img/posts/pytorch/7-2/image.png)
 
 ### torchvision
 

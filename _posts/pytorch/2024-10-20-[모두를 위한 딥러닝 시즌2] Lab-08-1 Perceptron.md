@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[모두를 위한 딥러닝 시즌2] lab08-1"
+title: "[모두를 위한 딥러닝 시즌2] Lab-08-1 Perceptron"
 date: 2024-10-20 16:33:00+0900
-categories: [Study, 모두를 위한 딥러닝 시즌2]
-tags: [모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
+categories: [Study, PyTorch]
+tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
 
@@ -19,7 +19,7 @@ math: true
 ### Perceptron
 
 - 인공신경망 한 종류
-- 입력 x들에 대해 $\sum x*w(weight)+b(bias)$ 를 통해 output을 출력
+- 입력 x들에 대해 $\sum {x*w(weight)+b(bias)}$ 를 통해 output을 출력
 - output은 활성화 함수(activation funtion) 거쳐서 만들어짐
 - 초창기 퍼셉트론은 Linear Classifier를 위해 만들어짐 (개,고양이 분류)
 
@@ -36,9 +36,9 @@ math: true
 - OR : 두 입력 A, B 모두 0일 때만 0을 출력, 나머지 1 출력
 - 퍼셉트론은 이러한 AND, OR 문제를 Linear Classicification을 통해 간단하게 분류 가능
 
-![image.png](assets/img/posts/deeplearningzerotoall/8-1/image.png)
+![image.png](assets/img/posts/pytorch/8-1/image.png)
 
-![image.png](assets/img/posts/deeplearningzerotoall/8-1/image%201.png)
+![image.png](assets/img/posts/pytorch/8-1/image%201.png)
 
 ## XOR
 
@@ -46,7 +46,7 @@ math: true
 - 하지만 한개의 layer를 가지는 퍼셉트론 구조로는 XOR를 해결할 수 없고, multi layer가 필요하지만, multi layer의 가중치 학습 방법이 없다는 것이 증명됨
 - 이후 multi layer를 학습시킬 수 있는 Backpropagation(역전파) 방법이 개발되어 XOR 문제 해결이 가능해짐
 
-![image.png](assets/img/posts/deeplearningzerotoall/8-1/image%202.png)
+![image.png](assets/img/posts/pytorch/8-1/image%202.png)
 
 퍼셉트론으로는 Linear Classification으로 나누는 것이 불가능함
 
