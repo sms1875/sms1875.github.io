@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-08-2 Multi Layer Perceptron"
-date: 2024-10-23 22:30:00+0900
+date: 2024-10-22 22:30:00+0900
 categories: [Study, PyTorch]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
