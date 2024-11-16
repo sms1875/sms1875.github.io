@@ -2,8 +2,8 @@
 layout: post
 title: "Flood Fill Algorithm"
 date: 2024-10-02 05:28:00+0900
-categories: [Study, Algorithm]
-tags: [Flood Fill, BFS, DFS, Graph]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Flood Fill, BFS, DFS, Graph]
 ---
 ## Flood Fill Algorithm이란?
 그래프 탐색의 한 종류로, 특정한 영역을 채우는 알고리즘   

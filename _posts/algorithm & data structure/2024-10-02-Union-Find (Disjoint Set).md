@@ -2,8 +2,8 @@
 layout: post
 title: "Union-Find (Disjoint Set)"
 date: 2024-10-02 01:20:00+0900
-categories: [Study, Data Structure]
-tags: [Union-Find, Disjoint Set, Graph]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Union-Find, Disjoint Set, Graph]
 ---
 ## Union-Find(Disjoint Set)란?  
 서로소 집합 자료구조  

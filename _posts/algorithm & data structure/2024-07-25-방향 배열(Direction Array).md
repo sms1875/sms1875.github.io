@@ -2,8 +2,8 @@
 layout: post
 title: "방향 배열(Direction Array)"
 date: 2024-07-25 14:45:00
-categories: [Study, Algorithm]
-tags: [Direction Array]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Direction Array]
 ---
 ## 방향 배열(Direction Array)이란?  
 2차원 평면에서 상하좌우 및 대각선 이동을 쉽게 구현하기 위한 배열  

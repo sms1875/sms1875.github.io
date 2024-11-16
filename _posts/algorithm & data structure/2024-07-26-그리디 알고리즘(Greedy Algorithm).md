@@ -2,8 +2,8 @@
 layout: post
 title: "그리디 알고리즘(Greedy Algorithm)"
 date: 2024-07-26 09:05:00
-categories: [Study, Algorithm]
-tags: [Greedy]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Greedy]
 ---
 ## 그리디 알고리즘(Greedy Algorithm)이란?
 

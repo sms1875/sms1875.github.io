@@ -2,8 +2,8 @@
 layout: post
 title: "최장 증가 수열 (LIS, Longest Increasing Subsequence)"
 date: 2024-09-05 10:21:00
-categories: [Study, Algorithm]
-tags: [LIS, Longest Increasing Subsequence]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, LIS, Longest Increasing Subsequence]
 ---
 ## 최장 증가 수열(LIS)이란?
 주어진 수열에서 순서대로 정렬된 가장 긴 증가하는 부분 수열  

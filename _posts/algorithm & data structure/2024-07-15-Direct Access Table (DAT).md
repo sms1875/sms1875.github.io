@@ -2,8 +2,8 @@
 layout: post
 title: "Direct Access Table (DAT)"
 date: 2024-07-25 14:39:00
-categories: [Study, Data Structure]
-tags: [DAT, Direct Access Table]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, DAT, Direct Access Table]
 ---
 ## DAT(Direct Access Table)란?  
 DAT는 값을 인덱스로 활용하는 자료구조  

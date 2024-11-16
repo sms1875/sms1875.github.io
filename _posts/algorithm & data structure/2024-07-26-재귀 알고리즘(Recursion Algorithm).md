@@ -2,8 +2,8 @@
 layout: post
 title: "재귀 알고리즘(Recursion Algorithm)"
 date: 2024-07-26 10:34:00
-categories: [Study, Algorithm]
-tags: [Recursion]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Recursion]
 ---
 ## 재귀(Recursion) 알고리즘이란?
 함수가 자기 자신을 호출하여 문제를 해결하는 방법  

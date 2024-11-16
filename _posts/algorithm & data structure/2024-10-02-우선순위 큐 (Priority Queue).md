@@ -2,8 +2,8 @@
 layout: post
 title: "우선순위 큐 (Priority Queue)"
 date: 2024-10-02 13:44:00+0900
-categories: [Study, Data Structure]
-tags: [Priority Queue, Queue, Heap]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Priority Queue, Queue, Heap]
 ---
 ## 우선순위 큐(Priority Queue)란?
 

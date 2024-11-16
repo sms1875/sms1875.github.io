@@ -2,8 +2,8 @@
 layout: post
 title: "연결 리스트 (Linked List)"
 date: 2024-10-02 10:24:00+0900
-categories: [Study, Data Structure]
-tags: [Linked List]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Linked List]
 ---
 
 ## 연결 리스트란?

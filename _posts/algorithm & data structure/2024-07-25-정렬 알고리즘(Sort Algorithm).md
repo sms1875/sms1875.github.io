@@ -2,8 +2,8 @@
 layout: post
 title: "정렬 알고리즘(Sort Algorithm)"
 date: 2024-07-25 15:20:00
-categories: [Study, Algorithm]
-tags: [Sort]
+categories: [Study, Algorithm & Data Structure]
+tags: [Algorithm & Data Structure, Sort]
 ---
 ## 정렬 알고리즘이란?
 
