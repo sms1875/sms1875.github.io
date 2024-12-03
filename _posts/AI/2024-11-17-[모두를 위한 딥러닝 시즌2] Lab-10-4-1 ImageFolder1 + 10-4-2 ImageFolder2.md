@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-10-4-1 ImageFolder1 + 10-4-2 ImageFolder2"
 date: 2024-11-17 02:52:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 mermaid : true
@@ -11,17 +11,17 @@ mermaid : true
 
 강의에서 사용하는 의자 이미지 데이터셋 사용
 
-![image.png](assets/img/posts/pytorch/10-4/image.png)
+![image.png](assets/img/posts/AI/10-4/image.png)
 
-![image.png](assets/img/posts/pytorch/10-4/image%201.png)
+![image.png](assets/img/posts/AI/10-4/image%201.png)
 
 깃허브 레포의 costom_data에 있다
 
-![image.png](assets/img/posts/pytorch/10-4/image%202.png)
+![image.png](assets/img/posts/AI/10-4/image%202.png)
 
 **origin data 크기 조절하기**
 
-![image.png](assets/img/posts/pytorch/10-4/image%203.png)
+![image.png](assets/img/posts/AI/10-4/image%203.png)
 
 ```python
 import torchvision
@@ -66,11 +66,11 @@ for num, value in enumerate(train_data):
 
 128 x 64로 조절된 이미지가 custom_data/train_data 경로에 저장되었다
 
-![image.png](assets/img/posts/pytorch/10-4/image%204.png)
+![image.png](assets/img/posts/AI/10-4/image%204.png)
 
 ## Neural Network 만들기
 
-![image.png](assets/img/posts/pytorch/10-4/image%205.png)
+![image.png](assets/img/posts/AI/10-4/image%205.png)
 
 - Layer 1
     - Convolution layer = (in_c = 3, out_c = 6, kernel_size = 5 stride = 1)

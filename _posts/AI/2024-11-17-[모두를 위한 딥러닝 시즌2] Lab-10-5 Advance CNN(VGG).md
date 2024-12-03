@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-10-5 Advance CNN(VGG)"
 date: 2024-11-17 03:17:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 mermaid : true
@@ -74,15 +74,15 @@ mermaid : true
     - **완전 연결(FC) 레이어**: 마지막에는 두 개의 4096 뉴런 FC 레이어와 소프트맥스 활성화 함수가 적용된 1000개의 클래스를 위한 최종 FC 레이어가 있음
     
 
-![image.png](assets/img/posts/pytorch/10-5/image.png)
+![image.png](assets/img/posts/AI/10-5/image.png)
 
-![image.png](assets/img/posts/pytorch/10-5/image%201.png)
+![image.png](assets/img/posts/AI/10-5/image%201.png)
 
 ### VGG 16
 
 - 3x3 Conv : stride 1, padding 1
 
-![image.png](assets/img/posts/pytorch/10-5/image%202.png)
+![image.png](assets/img/posts/AI/10-5/image%202.png)
 
 ### torchvision.models.vgg
 
@@ -330,10 +330,10 @@ def imshow(img):
 # 랜덤 학습 이미지 가져오기 및 시각화
 dataiter = iter(trainloader)
 images, labels = next(dataiter)
-vis.images(assets/img/posts/pytorch/10-5/images / 2 + 0.5)  # 정규화된 이미지를 되돌림
+vis.images(assets/img/posts/AI/10-5/images / 2 + 0.5)  # 정규화된 이미지를 되돌림
 
 # show images
-#imshow(torchvision.utils.make_grid(assets/img/posts/pytorch/10-5/images))
+#imshow(torchvision.utils.make_grid(assets/img/posts/AI/10-5/images))
 
 # 이미지와 라벨 출력
 print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
@@ -449,11 +449,11 @@ dataiter = iter(testloader)
 images, labels = next(dataiter)
 
 # 테스트 이미지 출력
-imshow(torchvision.utils.make_grid(assets/img/posts/pytorch/10-5/images))
+imshow(torchvision.utils.make_grid(assets/img/posts/AI/10-5/images))
 print('GroundTruth: ', ' '.join('%5s' % classes[labels[j]] for j in range(4)))
 
 # 예측 수행
-outputs = vgg16(assets/img/posts/pytorch/10-5/images.to(device))
+outputs = vgg16(assets/img/posts/AI/10-5/images.to(device))
 _, predicted = torch.max(outputs, 1)
 print('Predicted: ', ' '.join('%5s' % classes[predicted[j]]
                               for j in range(4)))
@@ -466,7 +466,7 @@ with torch.no_grad():
         images, labels = data
         images = images.to(device)
         labels = labels.to(device)
-        outputs = vgg16(assets/img/posts/pytorch/10-5/images)
+        outputs = vgg16(assets/img/posts/AI/10-5/images)
         
         _, predicted = torch.max(outputs.data, 1)
         
@@ -482,6 +482,6 @@ print('Accuracy of the network on the 10000 test images: %d %%' % (
 # Accuracy of the network on the 10000 test images: 72 %
 ```
 
-![image.png](assets/img/posts/pytorch/10-5/image%203.png)
+![image.png](assets/img/posts/AI/10-5/image%203.png)
 
 시간이 많이 걸린다

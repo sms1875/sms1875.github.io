@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-04-2 Loading Data"
 date: 2024-10-16 02:19:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
@@ -37,7 +37,7 @@ math: true
 
 → 데이터를 전부 사용하지말고 일부분만 사용해 학습하자! = Minibatch Gradient  Descent 
 
-![image.png](assets/img/posts/pytorch/4-2/image.png)
+![image.png](assets/img/posts/AI/4-2/image.png)
 
 ## Minibatch Gradient  Descent란?
 
@@ -45,7 +45,7 @@ math: true
 - 각 미니 배치에서만 코스트를 계산하여 업데이트하기 때문에 컴퓨터에 부담을 덜어주고, 업데이트 주기가 빠름
 - 하지만 전체 데이터를 사용하지 않으면 데이터가 잘못된 방향으로 학습할 수 있어, 기존의 기존 경사하강법과 달리 코스트가 매끄럽게 줄어들지 않고 거칠게 감소할 수 있음
 
-![image.png](assets/img/posts/pytorch/4-2/image%201.png)
+![image.png](assets/img/posts/AI/4-2/image%201.png)
 
 ## PyTorch Dataset and DataLoader 사용법
 

@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-06 Softmax Classification"
 date: 2024-10-16 20:42:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
@@ -27,9 +27,9 @@ torch.manual_seed(1)
 - 이산적인 확률 분포
     - 주사위, 가위바위보, 동전 던지기
 
-![image.png](assets/img/posts/pytorch/6/image.png)
+![image.png](assets/img/posts/AI/6/image.png)
 
-![image.png](assets/img/posts/pytorch/6/image%201.png)
+![image.png](assets/img/posts/AI/6/image%201.png)
 
 ### Softmax
 
@@ -67,7 +67,7 @@ $$
 2. 샘플링한 x를 Q에 넣음
 3. log를 씌운 값의 평균을 구함
 
-![image.png](assets/img/posts/pytorch/6/image%202.png)
+![image.png](assets/img/posts/AI/6/image%202.png)
 
 Q2 → Q1, Q1 → P 로 갈 수 있도록 (근사) 크로스 엔트로피를 최소화시키는것이 중요
 

@@ -2,7 +2,7 @@
 layout: post
 title: "BackPropagation 정리"
 date: 2024-10-23 00:42:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [ML, DL, pytorch]
 math: true
 mermaid : true

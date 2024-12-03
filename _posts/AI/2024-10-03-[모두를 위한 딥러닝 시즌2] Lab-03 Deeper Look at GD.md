@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-03 Deeper Look at GD"
 date: 2024-10-03 20:48:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
@@ -20,13 +20,13 @@ $$ y = W(x)  $$
 {: .prompt-info}
 
 
-![alt text](assets/img/posts/pytorch/3/image.png)
+![alt text](assets/img/posts/AI/3/image.png)
 
 ```python
 x_train = torch.FloatTensor([[1], [2], [3]])
 y_train = torch.FloatTensor([[1], [2], [3]])
 ```
-![alt text](assets/img/posts/pytorch/3/image-1.png)
+![alt text](assets/img/posts/AI/3/image-1.png)
 
 
 위의 데이터셋에서는 H(x) = x가 정확한 모델이며, W = 1이 가장 적합한 가중치  
@@ -38,7 +38,7 @@ y_train = torch.FloatTensor([[1], [2], [3]])
 모델의 예측값이 실제데이터와 얼마나 다른지 나타냄  
 잘 학습될 모델일수록 낮은 코스트를 가짐  
 
-![alt text](assets/img/posts/pytorch/3/image-2.png)  
+![alt text](assets/img/posts/AI/3/image-2.png)  
 
 $$  
 \frac{\partial \text{cost}}{\partial W} = \nabla W

@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-05 Logistic Regression"
 date: 2024-10-16 04:14:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
@@ -20,7 +20,7 @@ m개의 샘플, d의 dim을 가진 데이터 x 가 주어지면
 
 m개의 0과 1로 이루어진 예측값을 출력함
 
-![image.png](assets/img/posts/pytorch/5/image.png)
+![image.png](assets/img/posts/AI/5/image.png)
 
 이때 x의 어떤 값이 1일 확률 
 
@@ -38,7 +38,7 @@ $$
 
 Sigmoid 함수 $\sigma(x) = \frac{1}{1 + e^{-x}}$ 를 사용하여 cost 함수를 정의
 
-![image.png](assets/img/posts/pytorch/5/image%201.png)
+![image.png](assets/img/posts/AI/5/image%201.png)
 
 $$
 cost(W) = -\frac{1}{m} \sum y \log(H(x)) + (1 - y) \log(1 - H(x))
@@ -56,7 +56,7 @@ $$
 
 로 나눌 수 있다
 
-![image.png](assets/img/posts/pytorch/5/image%202.png)
+![image.png](assets/img/posts/AI/5/image%202.png)
 
 따라서 H(X)는 X가 1인 확률을 나타낸다 볼 수 있다
 

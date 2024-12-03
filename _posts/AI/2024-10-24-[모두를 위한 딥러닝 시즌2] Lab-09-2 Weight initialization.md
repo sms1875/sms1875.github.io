@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-09-2 Weight initialization"
 date: 2024-10-24 00:05:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 mermaid : true
@@ -21,7 +21,7 @@ N = Weight initialization 적용한 방식
 
 가중치 초기화 방법을 적용한 모델이 성능이 뛰어남
 
-![image.png](assets/img/posts/pytorch/9-2/image.png)
+![image.png](assets/img/posts/AI/9-2/image.png)
 
  
 
@@ -35,7 +35,7 @@ N = Weight initialization 적용한 방식
     - 입력 데이터 x로부터 은닉층 표현 y를 생성
     - y로부터 x를 복원한 x’ 생성
 
-![image.png](assets/img/posts/pytorch/9-2/image%201.png)
+![image.png](assets/img/posts/AI/9-2/image%201.png)
 
 ### DBN
 
@@ -47,13 +47,13 @@ N = Weight initialization 적용한 방식
     3. h1과 h2를 RBM으로 학습
     4. 이 과정을 여러 층에 걸쳐 반복
 
-![image.png](assets/img/posts/pytorch/9-2/image%202.png)
+![image.png](assets/img/posts/AI/9-2/image%202.png)
 
 - 파인튜닝 (Fine-Tuning)
     - 사전 학습이 완료된 후, 일반적인 역전파 알고리즘을 사용하여 네트워크를 학습
     - 전체 네트워크 미세조정
 
-![image.png](assets/img/posts/pytorch/9-2/image%203.png)
+![image.png](assets/img/posts/AI/9-2/image%203.png)
 
 의의
 

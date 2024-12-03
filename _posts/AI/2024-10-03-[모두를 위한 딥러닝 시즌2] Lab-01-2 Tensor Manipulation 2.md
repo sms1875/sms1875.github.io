@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-01-2 Tensor Manipulation 2"
 date: 2024-10-03 16:35:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 ---
 {% include embed/youtube.html id='XkqdNaNQGx8' %}  
@@ -44,7 +44,7 @@ print(ft.view([-1, 1, 3]).shape)
 #         [[ 9., 10., 11.]]])
 # torch.Size([4, 1, 3])
 ```
-![alt text](assets/img/posts/pytorch/1-2/image.png)
+![alt text](assets/img/posts/AI/1-2/image.png)
 ---
 
 ### Squeeze
@@ -91,7 +91,7 @@ print(ft.unsqueeze(1).shape)
 #         [2.]])
 # torch.Size([3, 1])
 ```
-![alt text](assets/img/posts/pytorch/1-2/image-1.png)
+![alt text](assets/img/posts/AI/1-2/image-1.png)
 ---
 ### Scatter (for One-Hot Encoding)
 
@@ -190,7 +190,7 @@ print(torch.cat([x, y], dim=1))
 # tensor([[1., 2., 5., 6.],
 #         [3., 4., 7., 8.]])
 ```
-![alt text](assets/img/posts/pytorch/1-2/image-2.png)
+![alt text](assets/img/posts/AI/1-2/image-2.png)
 ---
 
 ### Stacking
@@ -212,7 +212,7 @@ print(torch.stack([x, y, z], dim=1)) # torch.cat([x.unsqueeze(1),y.unsqueeze(1),
 # tensor([[1., 2., 3.],
 #         [4., 5., 6.]])
 ```
-![alt text](assets/img/posts/pytorch/1-2/image-3.png)
+![alt text](assets/img/posts/AI/1-2/image-3.png)
 ---
 
 ## Ones and Zeros Like

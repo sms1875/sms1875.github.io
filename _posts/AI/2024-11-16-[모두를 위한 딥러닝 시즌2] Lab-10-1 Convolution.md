@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-10-1 Convolution"
 date: 2024-11-16 05:01:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 mermaid : true
@@ -24,7 +24,7 @@ $$\text{Output 크기} = \frac{\text{Input 크기} + 2 \cdot \text{Padding 크�
 
 ### 계산 과정
 
-![image.png](assets/img/posts/pytorch/10-1/image.png)
+![image.png](assets/img/posts/AI/10-1/image.png)
 
 - **Input**: 5x5 크기의 행렬
 - **Filter**: 3x3 크기의 행렬
@@ -96,7 +96,7 @@ torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dil
 
 - 예시 : 입력 채널 1 / 출력 채널 1  / 커널 크기 3x3 구현
 
-![image.png](assets/img/posts/pytorch/10-1/image%201.png)
+![image.png](assets/img/posts/AI/10-1/image%201.png)
 
 ```python
 conv = nn.Conv2d(1,1,3)
@@ -107,16 +107,16 @@ conv = nn.Conv2d(1,1,3)
 ### Perceptron과 Convolution 연산과정
 
 1. filter와 Perceptron  
-   ![image.png](assets/img/posts/pytorch/10-1/image%202.png)  
+   ![image.png](assets/img/posts/AI/10-1/image%202.png)  
 
 2. Perceptron의 weight값으로 filter가 들어간다  
-  ![image.png](assets/img/posts/pytorch/10-1/image%203.png)
+  ![image.png](assets/img/posts/AI/10-1/image%203.png)
 
 3. Input data  
-  ![image.png](assets/img/posts/pytorch/10-1/image%204.png)  
+  ![image.png](assets/img/posts/AI/10-1/image%204.png)  
 
 4. 값과 가중치를 연결하여 연산한다  
-  ![image.png](assets/img/posts/pytorch/10-1/image%205.png)  
+  ![image.png](assets/img/posts/AI/10-1/image%205.png)  
 
 5. 결과 : $$1*1 + 2*0 + 3*1 + 0*0 +1*1 + 5*0 + 1*1 + 0*0 +2*1 + bias = 8 + bias$$
 
@@ -126,11 +126,11 @@ conv = nn.Conv2d(1,1,3)
 - FC(Fully Connected) 연산을 대체하기 위해 Average Pooling 사용
 - Max Pooling : 해당 영역 내의 가장 큰 값을 선택
 
-![image.png](assets/img/posts/pytorch/10-1/image%206.png)
+![image.png](assets/img/posts/AI/10-1/image%206.png)
 
 - Average Pooling : 해당 영역 내의 평균을 계산
 
-![image.png](assets/img/posts/pytorch/10-1/image%207.png)
+![image.png](assets/img/posts/AI/10-1/image%207.png)
 
 ### MaxPool2d
 
@@ -144,7 +144,7 @@ torch.nn.MaxPool2d(kernel_size, stride=None, padding=0, dilation=1, return_indic
 
 ## CNN implementation
 
-![image.png](assets/img/posts/pytorch/10-1/image%208.png)
+![image.png](assets/img/posts/AI/10-1/image%208.png)
 
 ```python
 import torch
@@ -179,7 +179,7 @@ $$\text{out}(N, C_{\text{out}}) = \text{bias}(C_{\text{out}}) + \sum_{k=0}^{C_{\
 
 - 필터(Filter)와 입력 이미지(Input)의 겹침 정도를 계산하여 출력(Output)을 생성
 
-![image.png](assets/img/posts/pytorch/10-1/image%209.png)
+![image.png](assets/img/posts/AI/10-1/image%209.png)
 
 ### **Convolution과 Cross-Correlation의 차이**
 

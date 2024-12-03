@@ -2,16 +2,16 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-08-2 Multi Layer Perceptron"
 date: 2024-10-22 22:30:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 ---
 
 ## Review : XOR
 
-![image.png](assets/img/posts/pytorch/8-2/image.png)
+![image.png](assets/img/posts/AI/8-2/image.png)
 
-![image.png](assets/img/posts/pytorch/8-2/image%201.png)
+![image.png](assets/img/posts/AI/8-2/image%201.png)
 
 - XOR : 입력이 같으면 0, 다르면 1을 출력
 - 단층 퍼셉트론(선형)으로는 XOR 문제를 해결할 수 없음 (Marvin Minsky, Perceptrons)
@@ -21,11 +21,11 @@ math: true
 - 여러 개의 층(layer)을 가지는 구조
 - 단층 퍼셉트론으로는 해결할 수 없는 비선형 문제를 해결할 수 있음
 
-![image.png](assets/img/posts/pytorch/8-2/image%202.png)
+![image.png](assets/img/posts/AI/8-2/image%202.png)
 
 - 선(결정 경계)을 더 추가함으로써 XOR 문제를 해결할 수 있음
 
-![image.png](assets/img/posts/pytorch/8-2/image%203.png)
+![image.png](assets/img/posts/AI/8-2/image%203.png)
 
 하지만, 당시에는 **MLP를 학습할 방법**이 없었기 때문에 인공지능 연구는 한동안 발전하지 못함(인공지능의 암흑기)
 
@@ -49,7 +49,7 @@ math: true
 2. 예측 값과 실제 값 $Y_{\text{true}}$ 간의 오차를 계산
 3. 오차에 대해 각 가중치에 대한 미분 값(기울기) $\frac{\partial \text{Loss}}{\partial W}$를 계산하여, 경사 하강법으로 가중치를 업데이트
 
-![image.png](assets/img/posts/pytorch/8-2/image%204.png)
+![image.png](assets/img/posts/AI/8-2/image%204.png)
 
 ### 코드 구현
 

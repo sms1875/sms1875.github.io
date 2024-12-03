@@ -2,7 +2,7 @@
 layout: post
 title: "[모두를 위한 딥러닝 시즌2] Lab-09-4 Batch Normalization"
 date: 2024-11-12 05:01:00+0900
-categories: [Study, PyTorch]
+categories: [Study, AI]
 tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, pytorch]
 math: true
 mermaid : true
@@ -43,7 +43,7 @@ mermaid : true
 - 모델이 학습 데이터에는 잘 동작하지만 테스트 데이터에서는 성능이 저하될 가능성이 있음
 - Gradient Vanishing / Exploding을 야기함
 
-![image.png](assets/img/posts/pytorch/9-4/image.png)
+![image.png](assets/img/posts/AI/9-4/image.png)
 
 ### **Internal Covariate Shift**
 
@@ -56,9 +56,9 @@ mermaid : true
 - 각 레이어마다 출력 데이터의 분포가 변화
 - 레이어가 깊어질수록 Internal Covariate Shift가 강하게 발생
 
-![image.png](assets/img/posts/pytorch/9-4/image%201.png)
+![image.png](assets/img/posts/AI/9-4/image%201.png)
 
-![image.png](assets/img/posts/pytorch/9-4/image%202.png)
+![image.png](assets/img/posts/AI/9-4/image%202.png)
 
 ## Batch Normalization
 
@@ -432,13 +432,13 @@ plot_compare(valid_accs, [0, 1.0], title="Validation Acc at Epoch")
 
 ```
 
-![image.png](assets/img/posts/pytorch/9-4/image%203.png)
+![image.png](assets/img/posts/AI/9-4/image%203.png)
 
-![image.png](assets/img/posts/pytorch/9-4/image%204.png)
+![image.png](assets/img/posts/AI/9-4/image%204.png)
 
-![image.png](assets/img/posts/pytorch/9-4/image%205.png)
+![image.png](assets/img/posts/AI/9-4/image%205.png)
 
-![image.png](assets/img/posts/pytorch/9-4/image%206.png)
+![image.png](assets/img/posts/AI/9-4/image%206.png)
 
 
 
