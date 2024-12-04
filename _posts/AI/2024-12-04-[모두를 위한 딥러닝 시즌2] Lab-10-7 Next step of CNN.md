@@ -7,8 +7,6 @@ tags: [Deep Learning Zero To All, 모두를 위한 딥러닝 시즌2, ML, DL, py
 math: true
 mermaid : true
 ---
-# [PyTorch] Lab-10-7 Next step of CNN
-
 ## 앞으로 뭘 하면 좋을까?
 
 ### Classification
