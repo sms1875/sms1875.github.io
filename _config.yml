@@ -224,3 +224,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+html-proofer:
+  assume-extension: true
+  disable-external: true
