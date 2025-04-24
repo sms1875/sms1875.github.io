@@ -44,7 +44,7 @@ tutorial repo에서 id 와 password는 모두 admin으로 설정되어 있다
 
 ![image.png](assets/img/posts/study/cicd/react 배포/image%205.png)
 
-간단히 아이템의 이름을 적어주고 **Pipeline**을 선택한 다음 OK 버튼을 누른다
+간단히 아이템의 이름을 적어주고 **Pipeline**을 선택한 다음 `OK` 버튼을 누른다
 
 ![image.png](assets/img/posts/study/cicd/react 배포/image%206.png)
 
@@ -70,9 +70,9 @@ clone 했던 `simple-node-js-react-npm-app` repo의 root 경로에 **Jenkinsfile
 pipeline {
     agent any
     stages {
-        stage('Build') { # Jenkins UI에 'Build' 단계 표시
+        stage('Build') { // Jenkins UI에 'Build' 단계 표시
             steps {
-                sh 'npm install' # 'npm install'을 실행해서 node_modules에 의존성 설치
+                sh 'npm install' // 'npm install'을 실행해서 node_modules에 의존성 설치
             }
         }
     }
@@ -125,11 +125,12 @@ Jenkins의 수행 과정은 다음과 같다
 
 ![image.png](assets/img/posts/study/cicd/react 배포/image%2017.png)
 
-### **Pipeline에 테스트 단계 추가하기**
+## **Pipeline에 테스트 단계 추가하기**
 
 Jenkinsfile에 **Test stage**를 추가한다
 
-일반적으로 Jenkinsfile은 가능한 한 깔끔하게 유지하고, 더 복잡한 빌드 스크립트 단계는 test.sh와 같은 **별도의 스크립트 파일로 분리**하여 작성하는것이 Pipeline의 유지 관리에 좋다
+> 일반적으로 Jenkinsfile은 가능한 한 깔끔하게 유지하고, 더 복잡한 빌드 스크립트 단계는 test.sh와 같은 **별도의 스크립트 파일로 분리**하여 작성하는것이 Pipeline의 유지 관리에 좋다  
+{: .prompt-tip}
 
 ```groovy
 pipeline {
@@ -140,11 +141,11 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') { # Jenkins UI에 'Test' 단계 표시
+        stage('Test') { // Jenkins UI에 'Test' 단계 표시
            steps {
                 sh './jenkins/scripts/test.sh' 
-                # simple-node-js-react-npm-app 저장소의 jenkins/scripts 디렉토리에 있는 test.sh 스크립트를 실행한다
-						}
+                // simple-node-js-react-npm-app 저장소의 jenkins/scripts 디렉토리에 있는 test.sh 스크립트를 실행한다
+            }
         }
     }
 }
@@ -160,7 +161,7 @@ pipeline {
 
 ![image.png](assets/img/posts/study/cicd/react 배포/image%2019.png)
 
-### **deliver 단계 추가하기**
+## **deliver 단계 추가하기**
 
 Jenkinsfile에 **Deliver stage**를 추가한다
 
@@ -182,7 +183,7 @@ pipeline {
             steps {
                 sh './jenkins/scripts/deliver.sh' 
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                # 실행 중인 빌드를 일시 정지하고 커스텀 메시지와 함께 사용자에게 계속 진행할지(Proceed) 중단할지(Abort) 확인받는다
+                // 실행 중인 빌드를 일시 정지하고 커스텀 메시지와 함께 사용자에게 계속 진행할지(Proceed) 중단할지(Abort) 확인받는다
                 sh './jenkins/scripts/kill.sh'
             }
         }
@@ -198,7 +199,7 @@ pipeline {
 
 ![image.png](assets/img/posts/study/cicd/react 배포/image%2021.png)
 
-**Deliver** stage 에서 `deliver.sh` 스크립트가 성공적으로 실행되고 사용자 입력을 대기중이다
+Deliver stage 에서 `deliver.sh` 스크립트가 성공적으로 실행되고 사용자 입력을 대기중이다
 
 ![image.png](assets/img/posts/study/cicd/react 배포/image%2022.png)
 
