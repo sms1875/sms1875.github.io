@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jenkins 튜토리얼 따라하기 : Jenkins 튜토리얼 따라하기  : Docker + Guided Tour (1)"
+title: "Jenkins 튜토리얼 따라하기 : Docker + Guided Tour (1)"
 date: 2025-04-25 14:08:00+0900
 categories: [Study, CICD]
 tags: [CICD, Jenkins]
