@@ -70,35 +70,6 @@ Docker Container 실행 모습
 
 ![image.png](assets/img/posts/study/cicd/Docker + Guided Tour (1)/image.png)
 
-### **두 개의 Container를 별도로 띄우는 이유**
-
-* Jenkins 자체는 **Container 안에서 돌아가는 일반 앱**   
-  -> Jenkins가 실제로 **빌드하고 테스트할 애플리케이션을 Docker Container로 띄우려면** `Docker 엔진(docker CLI)`이 필요하다
-* **문제는 Docker안에 또 Docker를 설치하거나, 소켓을 공유**해야 한다는 건데, 보안이나 권한 문제 등이 존재
-* 이를 해결하기 위해 Jenkins가 사용할 Docker deamon을 따로 `docker:dind`(Docker in Docker)로 만들어서, Jenkins가 그 Container에 접근해서 작업을 진행한다
-* **작동 과정**
-  1. **웹 UI에서 파이프라인 생성**
-      - GitHub 저장소 연결 또는 Dockerfile 기반 프로젝트 설정
-  2. **파이프라인 실행 시**
-      - Jenkins 내부에서 `docker` CLI 명령어 실행
-      - 환경 변수 `DOCKER_HOST=tcp://docker:2376` 설정에 따라 명령은 `jenkins-docker` Container의 Docker deamon에 전달
-  3. **Container 생성 및 실행**
-      - `jenkins-docker`는 명령을 받아 **Docker Container를 실행**
-  4. **작업 완료 후 결과 보고**
-      - Jenkins가 로그/빌드 결과를 수집하여 UI에 표시
-    
-
-```
-Host (Local)
-├─ Docker Network: jenkins
-│   ├─ jenkins-blueocean      ← Jenkins 앱 (명령 내림)
-│   └─ jenkins-docker         ← Docker deamon (명령 실행)
-└─ 빌드 Container          ← 실제로 여기 생성됨
-```
-
-> **Jenkins에서 작업하는 Container는 실제로 Jenkins Container 내부나, Docker deamon Container 내부가 아닌, "호스트 머신(Local)"에 띄워진다**  
-{: .prompt-info} 
-
 ### **Jenkins 초기 설정**
 
 Jenkins의 **password key**를 확인하기 위해 다음 명령어를 입력
