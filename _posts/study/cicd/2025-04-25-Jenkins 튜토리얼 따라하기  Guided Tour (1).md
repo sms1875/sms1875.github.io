@@ -1,74 +1,10 @@
 ---
 layout: post
-title: "Jenkins 튜토리얼 따라하기 : Docker + Guided Tour (1)"
+title: "Jenkins 튜토리얼 따라하기 : Guided Tour (1)"
 date: 2025-04-25 14:08:00+0900
 categories: [Study, CICD]
 tags: [CICD, Jenkins]
 ---
-## **Docker 에서 Jenkins 실행하기**
-
-### **Docker Image & Container**
-
-> Window11 환경에서 진행하였다.   
-> Linux, Mac에서 Docker run 명령어는 [Jenkins Handbook](https://www.jenkins.io/doc/book/installing/docker/) 참고
-{: .prompt-warning}
-
-**Jenkins Container**와 **Docker deamon Container**간의 통신을 위해 **Docker 네트워크**를 설정해 준다 
-
-```bash
-docker network create jenkins
-```
-
-Jenkins Container 안에서 Docker 명령을 실행하기 위해 **`docker:dind`** 이미지를 다운로드하고 실행한다
-
-```bash
-docker run --name jenkins-docker --rm --detach ^
-  --privileged --network jenkins --network-alias docker ^
-  --env DOCKER_TLS_CERTDIR=/certs ^
-  --volume jenkins-docker-certs:/certs/client ^
-  --volume jenkins-data:/var/jenkins_home ^
-  --publish 2376:2376 ^
-  docker:dind
-```
-
-- `--privileged` : dind가 제대로 작동하기 위해 권한 설정
-- `--volume jenkins-docker-certs:/certs/client` : TLS 인증서를 위한 볼륨 마운트
-- `--volume jenkins-data:/var/jenkins_home` : Jenkins 데이터를 위한 볼륨 마운트
-
-공식 Jenkins 이미지를 기반으로  Docker CLI를 추가한 Dockerfile을 만든다
-
-```docker
-FROM jenkins/jenkins
-USER root
-RUN apt-get update && apt-get install -y lsb-release
-RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
-  https://download.docker.com/linux/debian/gpg
-RUN echo "deb [arch=$(dpkg --print-architecture) \
-  signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
-  https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
-RUN apt-get update && apt-get install -y docker-ce-cli
-USER jenkins
-```
-
-Dockerfile을 기반으로 **`myjenkins`** 라는 이름으로 Docker 이미지를 빌드하고 실행시킨다
-
-```bash
-docker build -t myjenkins .
-```
-
-```bash
-docker run --name jenkins --restart=on-failure --detach ^
-  --network jenkins --env DOCKER_HOST=tcp://docker:2376 ^
-  --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 ^
-  --volume jenkins-data:/var/jenkins_home ^
-  --volume jenkins-docker-certs:/certs/client:ro ^
-  --publish 8080:8080 --publish 50000:50000 myjenkins
-```
-
-Docker Container 실행 모습
-
-![image.png](assets/img/posts/study/cicd/Docker + Guided Tour (1)/image.png)
 
 ### **Jenkins 초기 설정**
 
