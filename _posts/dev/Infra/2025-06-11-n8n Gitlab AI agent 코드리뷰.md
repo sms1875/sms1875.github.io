@@ -119,7 +119,7 @@ Test → Push events
 
 `Get Commit Diff node`를 SSAFY Gitlab 구조에 맞게 수정한다
 
-- URL : `https://lab.ssafy.com/api/v4/projects/{{ $('Push Webhook').first().json.body.project_id }}/repository/commits/{{ $json.id }}/diff`
+- URL : `https://lab.ssafy.com/api/v4/projects/&lbrace;&lbrace; $('Push Webhook').first().json.body.project_id &rbrace;&rbrace;/repository/commits/&lbrace;&lbrace; $json.id &rbrace;&rbrace;/diff`
 - 각 commit에서 diff를 가져온다
 - Header에 SSAFY Gitlab token을 설정해준다
     - PRIVATE-TOKEN : <your-private-token>
@@ -139,7 +139,7 @@ Test → Push events
 - Fields to Set
     - name : commit_sha
     - type : String
-    - value : `{{ $('Split Commit').item.json.id }}`
+    - value : `&lbrace;&lbrace; $('Split Commit').item.json.id &rbrace;&rbrace;`
 
 ![image.png](/assets/img/posts/dev/Infra/n8n Gitlab commit/image%2019.png)
 
@@ -167,13 +167,13 @@ Prompt도 설정 가능하다
 
 ````
 File path：
-{{ $node['Skip File Changes'].json.new_path }}
+&lbrace;&lbrace; $node['Skip File Changes'].json.new_path &rbrace;&rbrace;
 ```Original code
- {{ $json.originalCode }}
+ &lbrace;&lbrace; $json.originalCode &rbrace;&rbrace;
 ```
 change to
 ```New code
- {{ $json.newCode }}
+ &lbrace;&lbrace; $json.newCode &rbrace;&rbrace;
 ```
 Please review the code changes in this section:
 ````
@@ -186,13 +186,13 @@ AI 코드 리뷰 결과
 
 `Post Discussions` 의 값도 SSAFY Gitlab에 맞도록 수정해준다
 
-- URL : `https://lab.ssafy.com/api/v4/projects/{{ $('Push Webhook').first().json.body.project_id }}/repository/commits/{{ $node['Skip File Changes'].json.commit_sha }}/comments`
+- URL : `https://lab.ssafy.com/api/v4/projects/&lbrace;&lbrace; $('Push Webhook').first().json.body.project_id &rbrace;&rbrace;/repository/commits/&lbrace;&lbrace; $node['Skip File Changes'].json.commit_sha &rbrace;&rbrace;/comments`
 - Header에 SSAFY Gitlab token을 설정해준다
-    - PRIVATE-TOKEN : <your-private-token>
+    - PRIVATE-TOKEN : `<your-private-token>`
 - body
     - Parameter Type : Form Data
     - name : note
-    - value : `{{ $json.text }}`
+    - value : `&lbrace;&lbrace; $json.text &rbrace;&rbrace;`
 
 ![image.png](/assets/img/posts/dev/Infra/n8n Gitlab commit/image%2027.png)
 
@@ -219,7 +219,7 @@ origin branch의 commit들에도 comment가 달리는 현상이 있었다
 ### **해결 방안**
 
 - `Push Webhook` 노드 바로 다음에 `IF` 노드를 추가한다
-- 조건: `{{ $('Push Webhook').first().json.body.before === '0000000000000000000000000000000000000000' }}`
+- 조건: `&lbrace;&lbrace; $('Push Webhook').first().json.body.before === '0000000000000000000000000000000000000000' &rbrace;&rbrace;`
     - 이 조건이 `true`이면 skip
     - 이 조건이 `false`이면 기존 workflow를 수행하도록 하였다
 
