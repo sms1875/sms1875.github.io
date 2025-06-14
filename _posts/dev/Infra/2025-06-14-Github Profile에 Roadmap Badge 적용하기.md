@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Github Profile 에 Roadmap Badge 적용하기"
+title: "Github Profile에 Roadmap Badge 적용하기"
 date: 2025-06-14 19:00:00+0900
 categories: [Dev, Infra]
 tags: [Infra, Roadmap.sh, Github Profile, Badge]
@@ -10,7 +10,7 @@ tags: [Infra, Roadmap.sh, Github Profile, Badge]
 
 새로운 언어를 공부하는데 그냥 공부하니까 너무 재미가 없어서
 
-공부법을 찾아보면 한번씩 보이던 [https://roadmap.sh/](https://roadmap.sh/) 를 이용하였다
+공부법을 찾아보면 한번씩 보이던 **[roadmap.sh](https://roadmap.sh/)** 를 이용하였다
 
 ![image.png](/assets/img/posts/dev/Infra/Roadmap Badge/image.png)
 
