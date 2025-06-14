@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Github Profile 에 Roadmap.sh Badge 적용하기"
-date: 2025-06-14 16:28:00+0900
+title: "Github Profile 에 Roadmap Badge 적용하기"
+date: 2025-06-14 20:00:00+0900
 categories: [Dev, Infra]
 tags: [Infra, Roadmap.sh, Github Profile, Badge]
 ---
