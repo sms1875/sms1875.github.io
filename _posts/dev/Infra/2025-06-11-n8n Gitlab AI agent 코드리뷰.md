@@ -3,7 +3,7 @@ layout: post
 title: "n8n Gitlab AI agent 코드리뷰"
 date: 2025-06-11 23:28:00+0900
 categories: [Dev, Infra]
-tags: [Infra, Ant Media Server, RTMP, Docker, Streaming]
+tags: [Infra, n8n, AI agent, Gitlab, Webhook, Code Review]
 ---
 
 ## 프로젝트 설정
