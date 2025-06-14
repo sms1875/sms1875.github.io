@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Github Profile에 Roadmap.sh Badge 적용하기"
+title: "Github Profile 에 Roadmap.sh Badge 적용하기"
 date: 2025-06-14 16:28:00+0900
 categories: [Dev, Infra]
 tags: [Infra, Roadmap.sh, Github Profile, Badge]
@@ -12,21 +12,21 @@ tags: [Infra, Roadmap.sh, Github Profile, Badge]
 
 공부법을 찾아보면 한번씩 보이던 [https://roadmap.sh/](https://roadmap.sh/) 를 이용하였다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image.png)
 
 깃허브에서 Stars Rank가 무려 6등이다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%201.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%201.png)
 
 다양한 기술이나 분야에 대해 로드맵이 있다
 
 자신이 관심있는 기술이나 분야를 북마크해서 보면 된다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%202.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%202.png)
 
 로드맵에는 각 항목에 대해 중요도를 표시해준다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%203.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%203.png)
 
 항목을 클릭하면 관련된 유료, 무료 학습 자료들을 볼 수 있는데
 
@@ -34,7 +34,7 @@ tags: [Infra, Roadmap.sh, Github Profile, Badge]
 
 공부하면서 진행 상태를 변경해주면 된다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%204.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%204.png)
 
 **Roadmap.sh**에서는
 
@@ -42,18 +42,18 @@ tags: [Infra, Roadmap.sh, Github Profile, Badge]
 
 깃허브 프로필에 내 학습 상태가 표시되니까 동기부여가 되는거 같다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%205.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%205.png)
 
 ## Badge 만들기
 
 **Visit Profile → Edit Profile → Road Card**
 `HTML`, `Markdown`, `SVG` 등 다양한 형식으로 Badge를 만들 수 있다 
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%206.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%206.png)
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%207.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%207.png)
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%208.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%208.png)
 
 ## Workflow로 Badge Update (Github Profile)
 
@@ -69,7 +69,7 @@ Workflow에서 timestamp를 추가하는 방식으로 이미지의 주소를 계
 
 ### 1. Workflow 생성
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%209.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%209.png)
 
 ```yaml
 name: Update Roadmap.sh Badge
@@ -126,7 +126,7 @@ jobs:
 
 Workflow 파일을 만들고 Actions 탭으로 가면 생성한 workflow를 확인할 수 있다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2010.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2010.png)
 
 ### 2. Workflow Permission 설정
 
@@ -134,26 +134,26 @@ workflow는 UTC 기준 00시(한국 09시)에 자동으로 작동한다
 
 하지만 지금은 테스트를 위해 `Run workflow`로 바로 작동해보았다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2011.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2011.png)
 
 권한 설정이 되지 않아 commit에 실패했다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2012.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2012.png)
 
 Setting → Action → General 에서 `Read and write permissions` 권한을 설정해준다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2013.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2013.png)
 
 다시 워크플로우를 실행하여 업데이트 되는지 확인한다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2014.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2014.png)
 
 깃허브 프로필에도 제대로 적용되는지 확인한다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2015.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2015.png)
 
 커밋 내용에서도 업데이트가 제대로 반영된걸 확인할 수 있다
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2016.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2016.png)
 
-![image.png](/assets/img/posts/dev/Infra/Github Profile에 Roadmap Badge 적용하기/image%2017.png)
+![image.png](/assets/img/posts/dev/Infra/Github Profile 에 Roadmap Badge 적용하기/image%2017.png)
